@@ -2,12 +2,13 @@
 
 ## Le projet
 
-Site web bilingue de Pulsar Lab (en français : laboratoire Pulsar), à l'Université du Québec à Rimouski (UQAR), dirigé par Nicola Thibault-Protic, neuropsychologue et professeur.
+Site web bilingue de Pulsar Lab (en français : laboratoire Pulsar), à l'Université du Québec à Rimouski (UQAR), dirigé par Nicola Thibault, Ph. D., neuropsychologue et professeur adjoint au Département des sciences de la santé (campus de Rimouski).
 
 - Descripteur : « Neuropsychology, electrophysiology and time » en anglais, « Neuropsychologie, électrophysiologie et temps » en français.
 - Thèmes : perception du temps, électrophysiologie (EEG), fonctions exécutives et cognitives, neuropsychologie 2.0 (biodonnées, tests ouverts et libres).
 - Langues : anglais par défaut, à la racine du site (`/research/`), et français en version complète sous `/fr/` (`/fr/recherche/`). Le nom Pulsar ne se traduit pas : Pulsar Lab en anglais, laboratoire Pulsar en français.
 - Ancien nom : le laboratoire s'appelait Entre-temps dans la trousse de départ (`LISEZMOI.md`, `PROMPT_DEMARRAGE.md`). Il a été renommé Pulsar Lab le 6 octobre 2026.
+- Faits fournis par Nicola : `A_REMPLIR.md` et le dossier `photos_a_traiter/`, gardés hors de git. Ce sont les seules sources du contenu, avec les documents Claude Docs « Recherche de Pulsar Lab : axes et projets » et « Fiche de membre du laboratoire Pulsar ».
 
 ## Point de départ technique
 
