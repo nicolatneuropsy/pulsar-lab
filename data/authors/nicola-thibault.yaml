@@ -1,0 +1,58 @@
+# Fiche de Nicola Thibault (anglais, langue par défaut).
+# Les champs traduits en français sont dans data/fr/authors/nicola-thibault.yaml.
+# Source des faits : A_REMPLIR.md (hors git). Photo : assets/media/authors/nicola-thibault.jpg
+schema: hugoblox/author/v1
+slug: nicola-thibault
+is_owner: true
+name:
+  display: Nicola Thibault
+  given: Nicola
+  family: Thibault
+postnominals:
+  - PhD
+role: Assistant Professor, Department of Health Sciences, and Director of Pulsar Lab
+bio: >-
+  Nicola Thibault is a neuropsychologist specializing in cognitive neuroscience.
+  He holds a doctorate in psychology (research and intervention) from Université
+  Laval. His dissertation focused on time perception and used
+  electroencephalography to show that the brain processes short and long time
+  intervals differently depending on the sensory modality involved. His research
+  interests include executive functions, attention, working memory, time
+  perception, and brain oscillations. His current work examines the mechanisms
+  underlying these cognitive processes in neuropsychological tasks. Before joining
+  UQAR, he completed a postdoctoral fellowship at the Centre de recherche CERVO,
+  within the Canada Excellence Research Chair in Neuroplasticity.
+affiliations:
+  - name: Université du Québec à Rimouski (UQAR)
+    url: https://www.uqar.ca/professeurs/thibault-nicola/
+  - name: CoRSeR (regular member)
+  - name: Santé Québec, Bas-Saint-Laurent (associate member)
+links:
+  - icon: hero/envelope
+    url: mailto:nicola_thibault@uqar.ca
+    label: Email
+  - icon: academicons/orcid
+    url: https://orcid.org/0000-0003-1000-1042
+    label: ORCID
+  - icon: academicons/google-scholar
+    url: https://scholar.google.com/citations?user=AQ4yxzgAAAAJ
+    label: Google Scholar
+  - icon: hero/academic-cap
+    url: https://www.uqar.ca/professeurs/thibault-nicola/
+    label: UQAR faculty page
+interests:
+  - Time
+  - EEG
+  - Neuropsychology
+  - Working memory
+  - Attention
+  - Executive functions
+education:
+  - degree: Postdoctoral fellowship, Canada Excellence Research Chair in Neuroplasticity
+    institution: Centre de recherche CERVO
+  - degree: Doctorate in Psychology (Research and Intervention)
+    institution: Université Laval
+user_groups:
+  - Director
+  - Direction
+weight: 1

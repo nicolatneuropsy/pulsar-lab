@@ -1,0 +1,48 @@
+# Fiche de Nicola Thibault : champs traduits en français.
+# Ils remplacent ceux de data/authors/nicola-thibault.yaml sur le site français.
+postnominals:
+  - Ph. D.
+role: Professeur adjoint au Département des sciences de la santé et directeur du laboratoire Pulsar
+bio: >-
+  Le professeur Nicola Thibault est un neuropsychologue spécialisé en
+  neurosciences cognitives. Titulaire d’un doctorat en psychologie (recherche et
+  intervention) de l’Université Laval, il a consacré sa thèse à la perception du
+  temps et a démontré, par l’électroencéphalographie, que le cerveau traite
+  différemment les intervalles temporels courts et longs, selon la modalité
+  sensorielle sollicitée. Dans ses recherches, il s’intéresse aux fonctions
+  exécutives, à l’attention, à la mémoire de travail, à la perception du temps et
+  aux oscillations cérébrales. Ses travaux actuels portent sur les mécanismes qui
+  sous-tendent ces composantes cognitives au sein de tâches neuropsychologiques.
+  Avant de se joindre à l’UQAR, le professeur Thibault a effectué un stage
+  postdoctoral au Centre de recherche CERVO, au sein de la Chaire d’excellence en
+  recherche du Canada sur la neuroplasticité.
+affiliations:
+  - name: Université du Québec à Rimouski (UQAR)
+    url: https://www.uqar.ca/professeurs/thibault-nicola/
+  - name: CoRSeR (membre régulier)
+  - name: Santé Québec, Bas-Saint-Laurent (membre associé)
+links:
+  - icon: hero/envelope
+    url: mailto:nicola_thibault@uqar.ca
+    label: Courriel
+  - icon: academicons/orcid
+    url: https://orcid.org/0000-0003-1000-1042
+    label: ORCID
+  - icon: academicons/google-scholar
+    url: https://scholar.google.com/citations?user=AQ4yxzgAAAAJ
+    label: Google Scholar
+  - icon: hero/academic-cap
+    url: https://www.uqar.ca/professeurs/thibault-nicola/
+    label: Page de professeur à l’UQAR
+interests:
+  - Temps
+  - EEG
+  - Neuropsychologie
+  - Mémoire de travail
+  - Attention
+  - Fonctions exécutives
+education:
+  - degree: Stage postdoctoral, Chaire d’excellence en recherche du Canada sur la neuroplasticité
+    institution: Centre de recherche CERVO
+  - degree: Doctorat en psychologie (recherche et intervention)
+    institution: Université Laval
