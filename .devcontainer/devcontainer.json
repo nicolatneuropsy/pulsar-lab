@@ -1,5 +1,5 @@
 {
-  "name": "SAGE Lab (HugoBlox)",
+  "name": "Pulsar Lab (HugoBlox)",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
   "features": {
     "ghcr.io/devcontainers/features/node:2": {
@@ -14,7 +14,7 @@
       "version": "latest"
     }
   },
-  "updateContentCommand": "sudo chown -R vscode:vscode /workspaces/lab/node_modules /home/vscode/.local/share/pnpm && CI=true pnpm install --frozen-lockfile --prefer-offline",
+  "updateContentCommand": "sudo chown -R vscode:vscode ${containerWorkspaceFolder}/node_modules /home/vscode/.local/share/pnpm && CI=true pnpm install --frozen-lockfile --prefer-offline",
   "postCreateCommand": "pnpm --version && hugo version",
   "customizations": {
     "vscode": {
@@ -25,7 +25,7 @@
   },
   "mounts": [
     "source=pnpm-store,target=/home/vscode/.local/share/pnpm,type=volume",
-    "source=sage-lab-node-modules,target=/workspaces/lab/node_modules,type=volume"
+    "source=pulsar-lab-node-modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
   ],
   "remoteUser": "vscode",
   "forwardPorts": [
