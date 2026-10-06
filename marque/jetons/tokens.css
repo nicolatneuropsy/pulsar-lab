@@ -1,6 +1,7 @@
-/* Entre-temps : jetons de design
+/* Pulsar Lab : jetons de design
    Palette ardoise et sable, polices auto-hébergées.
-   Les chemins des polices sont relatifs à ce fichier (marque/jetons/) et seront adaptés dans Hugo. */
+   Les chemins des polices sont relatifs à ce fichier (marque/jetons/). Ils restent valides sur le site :
+   Hugo publie marque/jetons sous /jetons/ et marque/polices sous /polices/ (config/_default/module.yaml). */
 
 /* ---------- Polices ---------- */
 /* Plages Unicode reprises de Fontsource : latin (français, anglais) et latin-ext (noms propres d'Europe centrale, etc.) */
@@ -36,56 +37,56 @@
 
 :root {
   /* Palette ardoise et sable */
-  --et-ardoise-nuit: #1D262D;
-  --et-ardoise: #2C3842;
-  --et-ardoise-claire: #33404A;
-  --et-schiste: #4B5A66;
-  --et-lauze: #7D8C98;
-  --et-brume: #AAB6BF;
-  --et-nuage: #D9E0E5;
-  --et-craie: #F3F5F6;
-  --et-blanc: #FFFFFF;
-  --et-sable: #C9A46A;
-  --et-ocre: #8A6B33;
+  --pl-ardoise-nuit: #1D262D;
+  --pl-ardoise: #2C3842;
+  --pl-ardoise-claire: #33404A;
+  --pl-schiste: #4B5A66;
+  --pl-lauze: #7D8C98;
+  --pl-brume: #AAB6BF;
+  --pl-nuage: #D9E0E5;
+  --pl-craie: #F3F5F6;
+  --pl-blanc: #FFFFFF;
+  --pl-sable: #C9A46A;
+  --pl-ocre: #8A6B33;
 
   /* Rôles sur fond clair (par défaut) */
-  --et-fond: var(--et-craie);
-  --et-surface: var(--et-blanc);
-  --et-texte: var(--et-ardoise);
-  --et-texte-secondaire: var(--et-schiste);
-  --et-accent: var(--et-ocre);
-  --et-bordure: var(--et-nuage);
-  --et-filet: var(--et-lauze);
+  --pl-fond: var(--pl-craie);
+  --pl-surface: var(--pl-blanc);
+  --pl-texte: var(--pl-ardoise);
+  --pl-texte-secondaire: var(--pl-schiste);
+  --pl-accent: var(--pl-ocre);
+  --pl-bordure: var(--pl-nuage);
+  --pl-filet: var(--pl-lauze);
 
   /* Typographie */
-  --et-police-titre: "Sora", "IBM Plex Sans", system-ui, sans-serif;
-  --et-police-texte: "IBM Plex Sans", system-ui, sans-serif;
-  --et-police-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --et-espacement-surtitre: 0.22em;
-  --et-espacement-logo: 0.16em;
+  --pl-police-titre: "Sora", "IBM Plex Sans", system-ui, sans-serif;
+  --pl-police-texte: "IBM Plex Sans", system-ui, sans-serif;
+  --pl-police-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --pl-espacement-surtitre: 0.22em;
+  --pl-espacement-logo: 0.16em;
 
   /* Formes et mise en page */
-  --et-rayon: 14px;
-  --et-rayon-grand: 22px;
-  --et-largeur-max: 1200px;
-  --et-opacite-filigrane: 0.06;
+  --pl-rayon: 14px;
+  --pl-rayon-grand: 22px;
+  --pl-largeur-max: 1200px;
+  --pl-opacite-filigrane: 0.06;
 }
 
 /* Sections sombres : héros, bandeaux, pied de page */
-.et-sombre,
-.et-nuit,
-[data-et-theme="sombre"] {
-  --et-fond: var(--et-ardoise);
-  --et-surface: var(--et-ardoise-claire);
-  --et-texte: var(--et-craie);
-  --et-texte-secondaire: var(--et-brume);
-  --et-accent: var(--et-sable);
-  --et-bordure: #3E4C58;
-  --et-filet: var(--et-lauze);
+.pl-sombre,
+.pl-nuit,
+[data-pl-theme="sombre"] {
+  --pl-fond: var(--pl-ardoise);
+  --pl-surface: var(--pl-ardoise-claire);
+  --pl-texte: var(--pl-craie);
+  --pl-texte-secondaire: var(--pl-brume);
+  --pl-accent: var(--pl-sable);
+  --pl-bordure: #3E4C58;
+  --pl-filet: var(--pl-lauze);
 }
 
-.et-nuit {
-  --et-fond: var(--et-ardoise-nuit);
+.pl-nuit {
+  --pl-fond: var(--pl-ardoise-nuit);
 }
 
 /* Contrastes vérifiés (WCAG 2.x)

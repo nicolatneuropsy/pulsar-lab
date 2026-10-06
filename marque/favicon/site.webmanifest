@@ -1,8 +1,8 @@
 {
-  "name": "Entre-temps",
-  "short_name": "Entre-temps",
-  "description": "Laboratoire sur la neuropsychologie, l'électrophysiologie et le temps",
-  "lang": "fr-CA",
+  "name": "Pulsar Lab",
+  "short_name": "Pulsar Lab",
+  "description": "Neuropsychology, electrophysiology and time",
+  "lang": "en-US",
   "icons": [
     { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
     { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
