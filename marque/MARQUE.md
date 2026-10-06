@@ -1,35 +1,34 @@
-# Entre-temps : guide de marque
+# Pulsar Lab : guide de marque
 
 ## Nom et descripteur
 
-- Nom : **Entre-temps**, avec majuscule initiale et trait d'union dans le texte courant.
-- Le logo écrit le nom en capitales : ENTRE-TEMPS.
-- Descripteur officiel : « Laboratoire sur la neuropsychologie, l'électrophysiologie et le temps ».
-- Descripteur anglais proposé, à valider : « Laboratory for neuropsychology, electrophysiology and time ».
-- Le nom reste en français sur la version anglaise du site.
+- Nom : **Pulsar Lab** en anglais, **laboratoire Pulsar** en français (« Laboratoire Pulsar » en début de phrase ou comme titre). Le nom Pulsar ne se traduit pas.
+- Le logo écrit PULSAR en capitales, sans « Lab ». Le même logo sert aux deux langues.
+- Descripteur : « Neuropsychology, electrophysiology and time » en anglais, « Neuropsychologie, électrophysiologie et temps » en français.
+- Ancien nom : Entre-temps, dans la trousse de départ. Renommé Pulsar Lab le 6 octobre 2026.
 
 ## L'idée
 
-Le symbole est un sablier dessiné par deux oscillations en opposition de phase. Un seul grain tombe. Le trait d'union du mot ENTRE-TEMPS et le grain portent la même couleur d'accent : c'est l'intervalle, le « entre » du temps.
+Le symbole est un sablier dessiné par deux oscillations en opposition de phase. Un seul grain tombe, dans la couleur d'accent. Un pulsar est une étoile dont les impulsions reviennent à intervalles très réguliers, à la manière d'une horloge : le nom rejoint le temps et les oscillations qu'étudie le laboratoire.
 
 ## Fichiers
 
-Tous les logos sont vectorisés (le texte est converti en tracés), donc ils s'affichent correctement sans les polices installées.
+Tous les logos sont vectorisés (le texte est converti en tracés), donc ils s'affichent correctement sans les polices installées. Ils sont produits par `outils/generer_logos.py` : toute modification passe par ce script.
 
 | Fichier (logo/svg et logo/png) | Usage |
 |---|---|
-| `horizontal-descripteur` | Pied de page du site, en-têtes de documents, présentations, affiches |
-| `horizontal` | Barre de navigation, signature courriel, petits formats |
-| `vertical-descripteur` | Page couverture, écran d'accueil, publication carrée |
-| `symbole` | Avatar, filigrane, petits espaces |
+| `pulsar_horizontal-descripteur_{couleur}_{en,fr}` | Pied de page du site (dans la langue de la page), en-têtes de documents, présentations, affiches |
+| `pulsar_horizontal_{couleur}` | Barre de navigation, signature courriel, petits formats |
+| `pulsar_vertical-descripteur_{couleur}_{en,fr}` | Page couverture, écran d'accueil, publication carrée |
+| `pulsar_symbole_{couleur}` | Avatar, filigrane, petits espaces |
 | `favicon/favicon.svg`, `favicon.ico`, `favicon-16.png`, `favicon-32.png` | Onglet du navigateur |
 | `favicon/apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, `site.webmanifest` | Écran d'accueil des téléphones |
-| `social/og-image.png` | Image de partage (1200 × 630) pour les réseaux et les messageries |
+| `social/og-image.png` | Image de partage (1200 × 630), bilingue, pour les réseaux et les messageries |
 
 Variantes de couleur :
 
-- `ardoise` : pour fond clair (Craie ou Blanc). Trait d'union et grain en Ocre.
-- `craie` : pour fond sombre (Ardoise ou Ardoise nuit). Trait d'union et grain en Sable.
+- `ardoise` : pour fond clair (Craie ou Blanc). Grain en Ocre.
+- `craie` : pour fond sombre (Ardoise ou Ardoise nuit). Grain en Sable.
 - `mono-ardoise` et `mono-blanc` : une seule couleur, pour l'impression, la gravure ou les fonds photographiques.
 
 ## Zone de protection et tailles minimales
@@ -71,6 +70,5 @@ Le symbole peut apparaître en très grand derrière une section, dépassant du 
 
 - Déformer, incliner ou recadrer le logo.
 - Le recolorer hors de la palette, ou lui ajouter ombre, contour ou dégradé.
-- Retaper ENTRE-TEMPS en texte au lieu d'utiliser le fichier.
-- Rendre le trait d'union d'une autre couleur que le grain dans les versions deux tons.
+- Retaper PULSAR en texte au lieu d'utiliser le fichier, ou ajouter « LAB » au logo.
 - Poser le logo sur une photo chargée sans voile Ardoise d'au moins 70 %.

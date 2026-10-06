@@ -1,12 +1,13 @@
-# Entre-temps : site web du laboratoire
+# Pulsar Lab : site web du laboratoire
 
 ## Le projet
 
-Site web bilingue du laboratoire Entre-temps, à l'Université du Québec à Rimouski (UQAR), dirigé par Nicola Thibault-Protic, neuropsychologue et professeur.
+Site web bilingue de Pulsar Lab (en français : laboratoire Pulsar), à l'Université du Québec à Rimouski (UQAR), dirigé par Nicola Thibault-Protic, neuropsychologue et professeur.
 
-- Descripteur officiel : « Laboratoire sur la neuropsychologie, l'électrophysiologie et le temps ».
+- Descripteur : « Neuropsychology, electrophysiology and time » en anglais, « Neuropsychologie, électrophysiologie et temps » en français.
 - Thèmes : perception du temps, électrophysiologie (EEG), fonctions exécutives et cognitives, neuropsychologie 2.0 (biodonnées, tests ouverts et libres).
-- Langues : français par défaut, anglais en version complète. Le nom Entre-temps reste en français dans les deux langues.
+- Langues : anglais par défaut, à la racine du site (`/research/`), et français en version complète sous `/fr/` (`/fr/recherche/`). Le nom Pulsar ne se traduit pas : Pulsar Lab en anglais, laboratoire Pulsar en français.
+- Ancien nom : le laboratoire s'appelait Entre-temps dans la trousse de départ (`LISEZMOI.md`, `PROMPT_DEMARRAGE.md`). Il a été renommé Pulsar Lab le 6 octobre 2026.
 
 ## Point de départ technique
 
@@ -19,10 +20,10 @@ Site web bilingue du laboratoire Entre-temps, à l'Université du Québec à Rim
 
 Tout est dans `marque/`. Lire `marque/MARQUE.md` avant toute décision visuelle.
 
-- Nom : Entre-temps, avec trait d'union. Le logo l'écrit ENTRE-TEMPS.
-- Symbole : un sablier formé de deux oscillations en opposition de phase, avec un grain qui tombe. Le grain et le trait d'union portent la couleur d'accent.
-- Utiliser les fichiers de `marque/logo/svg/` tels quels. Ne pas redessiner, recolorer ni retaper le logo en texte.
-- Couleurs, polices et rôles : `marque/jetons/tokens.css`. Toujours passer par ces variables, aucune couleur codée en dur.
+- Nom : Pulsar Lab en anglais, laboratoire Pulsar en français. Le logo écrit PULSAR, sans « Lab », et sert aux deux langues.
+- Symbole : un sablier formé de deux oscillations en opposition de phase, avec un grain qui tombe. Le grain porte la couleur d'accent.
+- Utiliser les fichiers de `marque/logo/svg/` tels quels. Ne pas les redessiner, les recolorer ni retaper le logo en texte. Ils sont produits par `marque/outils/generer_logos.py` : toute modification des logos passe par ce script, avec mon accord.
+- Couleurs, polices et rôles : `marque/jetons/tokens.css` (variables `--pl-*`). Toujours passer par ces variables, aucune couleur codée en dur.
 - Polices auto-hébergées depuis `marque/polices/`. Pas de Google Fonts ni d'autre service externe de polices (Loi 25).
 
 ### Palette ardoise et sable
@@ -37,8 +38,8 @@ Tout est dans `marque/`. Lire `marque/MARQUE.md` avant toute décision visuelle.
 | Brume | #AAB6BF | Texte secondaire sur fond sombre |
 | Nuage | #D9E0E5 | Bordures et séparateurs sur fond clair |
 | Craie | #F3F5F6 | Fond clair principal |
-| Sable | #C9A46A | Accent sur fond sombre : liens, grain, trait d'union, bouton principal |
-| Ocre | #8A6B33 | Accent sur fond clair : liens, grain, trait d'union |
+| Sable | #C9A46A | Accent sur fond sombre : liens, grain, bouton principal |
+| Ocre | #8A6B33 | Accent sur fond clair : liens, grain |
 
 Les paires texte et fond prévues respectent WCAG AA (détail à la fin de `tokens.css`). Le Sable ne sert jamais pour du texte sur fond clair, l'Ocre jamais pour du texte sur fond sombre.
 
@@ -68,7 +69,7 @@ Elles s'appliquent à tout le texte visible (pages, menus, boutons, textes alter
 
 - Pour toute étape importante : mode Plan d'abord, présenter le plan, attendre mon accord.
 - Petites étapes, avec un commit git clair et en français pour chacune.
-- Avant d'annoncer qu'une étape est terminée : lancer l'aperçu local et vérifier le rendu sur bureau et sur mobile, en français et en anglais.
+- Avant d'annoncer qu'une étape est terminée : lancer l'aperçu local et vérifier le rendu sur bureau et sur mobile, en anglais et en français.
 - Accessibilité WCAG AA : contrastes, navigation au clavier, textes alternatifs, titres bien hiérarchisés.
 - Aucun traceur ni outil d'analytique sans mon accord (Loi 25).
 - Je code surtout en R et je commence en Python. Expliquer en une phrase les commandes Hugo, git et pnpm la première fois qu'elles servent.
