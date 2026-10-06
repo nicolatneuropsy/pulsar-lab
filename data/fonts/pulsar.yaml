@@ -1,0 +1,36 @@
+# Pack de polices Pulsar Lab pour Hugo Blox.
+#
+# Les familles « system-* » empêchent Hugo Blox de demander des polices à
+# Google Fonts (Loi 25). Les vraies polices (Sora, IBM Plex Sans, IBM Plex Mono)
+# sont auto-hébergées : déclarées dans marque/jetons/tokens.css et appliquées
+# par assets/css/pulsar.css.
+
+hugoblox:
+  meta:
+    format: "hugoblox-font@1"
+    name: "Pulsar Lab"
+    vendor: "pulsar-lab"
+    version: "1.0.0"
+    license: "OFL-1.1"
+    style: "sans"
+    description: "Sora, IBM Plex Sans et IBM Plex Mono, auto-hébergées"
+
+  families:
+    heading: "system-sans"
+    body: "system-sans"
+    code: "system-mono"
+
+  weights:
+    heading: [600]
+    body: [400, 600]
+    code: [400]
+
+  leading:
+    heading: 1.2
+    body: 1.65
+    code: 1.5
+
+  tracking:
+    heading: "-0.01em"
+    body: "0"
+    caps: "0.22em"

@@ -1,10 +1,31 @@
-{{- $is_fr := eq .Lang "fr" -}}
-<footer class="container mx-auto mt-24 mb-4 px-4 text-center text-sm leading-6 text-slate-700">
-  <p>
-    {{- if $is_fr -}}
-      Hébergé sur <a class="underline" href="https://github.com/rempsyc/lab">GitHub</a>, créé par <a class="underline" href="https://remi-theriault.com/fr/">Rémi Thériault</a> et publié avec <a class="underline" href="https://hugoblox.com/templates/academic-cv" target="_blank" rel="noopener" data-hbx="poweredby_brand">Hugo Blox Kit</a> — <a class="underline" href="https://github.com/rempsyc/lab/generate" target="_blank" rel="noopener">cloner ce modèle</a>.
-    {{- else -}}
-      Hosted on <a class="underline" href="https://github.com/rempsyc/lab">GitHub</a>, built by <a class="underline" href="https://remi-theriault.com/">Rémi Thériault</a>, and published with <a class="underline" href="https://hugoblox.com/templates/academic-cv" target="_blank" rel="noopener" data-hbx="poweredby_brand">Hugo Blox Kit</a> — <a class="underline" href="https://github.com/rempsyc/lab/generate" target="_blank" rel="noopener">clone this template</a>.
-    {{- end -}}
-  </p>
+{{- /*
+  Pulsar Lab : pied de page sur fond Ardoise nuit.
+  Logo horizontal avec descripteur, version craie (pour fond sombre), dans la
+  langue de la page et d'au moins 240 px de large (marque/MARQUE.md). Le texte
+  alternatif reprend le nom et le descripteur de marque/jetons/tokens.json.
+  Les informations manquantes restent marquées [À COMPLÉTER].
+*/ -}}
+{{- $jetons := hugo.Data.marque.tokens -}}
+{{- $langue := .Lang -}}
+{{- $logo := resources.Get (printf "marque/logo/svg/pulsar_horizontal-descripteur_craie_%s.svg" $langue) -}}
+<footer class="pl-pied pl-sombre pl-nuit">
+  <div class="pl-pied__contenu">
+    <div class="pl-pied__marque">
+      {{- with $logo }}
+      {{- $dimensions := index (findRESubmatch `width="([\d.]+)" height="([\d.]+)"` .Content 1) 0 }}
+      {{- $hauteur := math.Round (mul 300 (div (float (index $dimensions 2)) (float (index $dimensions 1)))) }}
+      <img src="{{ .RelPermalink }}" width="300" height="{{ $hauteur }}" loading="lazy"
+           alt="{{ index $jetons.nom $langue }}, {{ lower (index $jetons.descripteur $langue) }}">
+      {{- end }}
+    </div>
+    <div class="pl-pied__bloc">
+      <h2 class="pl-surtitre">{{ i18n "pl_adresse" }}</h2>
+      <p>{{ i18n "pl_a_completer" }}</p>
+    </div>
+    <div class="pl-pied__bloc">
+      <h2 class="pl-surtitre">{{ i18n "pl_liens_utiles" }}</h2>
+      <p>{{ i18n "pl_a_completer" }}</p>
+    </div>
+  </div>
+  <p class="pl-pied__credit">{{ i18n "pl_credit" | safeHTML }}</p>
 </footer>

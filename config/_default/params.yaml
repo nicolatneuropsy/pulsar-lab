@@ -13,18 +13,19 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   identity:
     # Site name - shown in navbar, footer, copyright, and browser title by default
-    name: "SAGE Lab"
+    # (anglais par défaut, version française dans languages.yaml)
+    name: "Pulsar Lab"
     # Legal entity for copyright notices (defaults to name if not set)
-    organization: "SAGE Lab"
+    organization: "Pulsar Lab"
     # Schema.org type for structured data
     type: organization # person | organization | local_business
-    # Short tagline displayed on your site
-    tagline: "Self, Altruism, Groups, & Empathy"
+    # Short tagline displayed on your site (descripteur)
+    tagline: "Neuropsychology, electrophysiology and time"
     # Site meta description for search engines and social sharing
-    description: "A bilingual social psychology research lab at UQAR studying Self, Altruism, Groups, and Empathy."
+    description: "Pulsar Lab: neuropsychology, electrophysiology and time. Université du Québec à Rimouski (UQAR)."
     # Social accounts (used for meta tags like Twitter Cards)
     social:
-      twitter: "RemiTPsyc" # Twitter/X handle for Twitter Cards (without @)
+      twitter: "" # Twitter/X handle for Twitter Cards (without @)
 
   # ────────────────────────────────────────────────────────────────────────────
   # THEME
@@ -34,7 +35,7 @@ hugoblox:
     # Mode: 'light', 'dark', or 'system' (follows OS preference)
     mode: light
     # Theme pack: name from data/themes/ or { light: "x", dark: "y" } for mix-and-match
-    pack: "sage"
+    pack: "pulsar"
     # Optional: Override theme pack colors
     colors:
       primary: "" # Tailwind palette name or hex (e.g., "indigo" or "#6366f1")
@@ -60,7 +61,8 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   typography:
     # Theme pack: name from data/fonts/
-    pack: "academic"
+    # (polices système pour Hugo Blox, polices de marque auto-hébergées par-dessus)
+    pack: "pulsar"
 
   # ────────────────────────────────────────────────────────────────────────────
   # LAYOUT
@@ -82,10 +84,13 @@ hugoblox:
     enable: true
     # Header style variant
     style: navbar # navbar | navbar-simple | minimal
+    # Logo seulement : le nom n'est jamais retapé en texte
+    show_logo: true
+    show_title: false
     # Stick to top on scroll
     sticky: true
     # Menu alignment
-    align: center # left | center | right
+    align: right # left | center | right
     # Feature toggles
     search: true
     theme_toggle: false
@@ -228,7 +233,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   repository:
     enable: false
-    url: "https://github.com/rempsyc/lab"
+    url: "" # [À COMPLÉTER] : adresse du dépôt GitHub, une fois créé
     branch: main
     content_dir: content
 
@@ -237,9 +242,10 @@ hugoblox:
   # Regional formatting preferences
   # ────────────────────────────────────────────────────────────────────────────
   locale:
-    date_format: "Jan 2, 2006" # Go time format
+    # Formats américains par défaut, formats québécois redéfinis dans languages.yaml
+    date_format: "January 2, 2006" # Go time format
     time_format: "3:04 PM"
-    address_format: en-us
+    address_format: en-ca
 
   # ────────────────────────────────────────────────────────────────────────────
   # SECURITY

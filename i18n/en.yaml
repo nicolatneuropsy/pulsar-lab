@@ -1,0 +1,11 @@
+# Labels specific to the Pulsar Lab website (English).
+# Other labels come from Hugo Blox (blox module, i18n/en.yaml).
+
+pl_aller_au_contenu: "Skip to content"
+pl_navigation_principale: "Main navigation"
+pl_menu: "Menu"
+pl_langues: "Language selection"
+pl_adresse: "Address"
+pl_liens_utiles: "Useful links"
+pl_a_completer: "[À COMPLÉTER]"
+pl_credit: 'Template adapted from <a href="https://github.com/rempsyc/lab">rempsyc/lab</a> (SAGE Lab, Rémi Thériault), MIT License. Powered by <a href="https://hugoblox.com">Hugo Blox</a>.'

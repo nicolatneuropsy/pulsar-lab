@@ -27,3 +27,47 @@ mounts:
     target: layouts
   - source: assets
     target: assets
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # Pulsar Lab : fichiers de marque branchés tels quels depuis marque/,
+  # sans copie. Déclarer un montage vers static/ ou data/ annule le montage
+  # par défaut de ces dossiers : on les remet explicitement.
+  # ──────────────────────────────────────────────────────────────────────────
+  - source: static
+    target: static
+  - source: data
+    target: data
+
+  # Polices auto-hébergées et leurs licences, publiées sous /polices/
+  - source: marque/polices
+    target: static/polices
+  # Jetons de design, publiés sous /jetons/ : les chemins ../polices/ de
+  # tokens.css restent valides
+  - source: marque/jetons
+    target: static/jetons
+    files:
+      - 'tokens.css'
+  # Jetons lus par les gabarits (nom, descripteur, couleurs) :
+  # hugo.Data.marque.tokens
+  - source: marque/jetons
+    target: data/marque
+    files:
+      - 'tokens.json'
+  # Favicons et manifeste, publiés à la racine du site
+  - source: marque/favicon
+    target: static
+  # Logos SVG et PNG, accessibles aux gabarits (resources.Get "marque/logo/...")
+  - source: marque/logo
+    target: assets/marque/logo
+  # Fichiers que Hugo Blox détecte par leur nom : logo de la barre de
+  # navigation (fond Ardoise, donc version craie), icône et image de partage
+  - source: marque/logo/svg/pulsar_horizontal_craie.svg
+    target: assets/media/logo.svg
+  - source: marque/favicon/favicon.svg
+    target: assets/media/icon.svg
+  # Icône d'écran d'accueil (iPhone) : sans ce fichier, Hugo Blox prendrait
+  # l'icône par défaut de son module
+  - source: marque/favicon/apple-touch-icon.png
+    target: assets/media/icon.png
+  - source: marque/social/og-image.png
+    target: assets/media/sharing.png

@@ -1,14 +1,20 @@
+{{- /*
+  Pulsar Lab : données structurées de l'organisation (page d'accueil).
+  Noms tirés de marque/jetons/tokens.json. Logo : symbole ardoise en PNG,
+  lisible sur fond blanc. Adresse [À COMPLÉTER] : omise tant qu'elle manque.
+*/ -}}
+{{- $jetons := hugo.Data.marque.tokens -}}
 {{- $sharing_image := resources.GetMatch (path.Join "media" "sharing.*") -}}
-{{- $logo_url := partial "functions/get_logo_url" . -}}
+{{- $logo := resources.Get "marque/logo/png/pulsar_symbole_ardoise.png" -}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": {{ site.BaseURL }},
-  "name": "SAGE Lab",
-  "alternateName": "Laboratoire SAGE",
+  "name": {{ $jetons.nom.en }},
+  "alternateName": {{ $jetons.nom.fr }},
   "description": {{ site.Params.hugoblox.identity.description }},
-  "logo": {{ $logo_url }},
+  {{ with $logo }}"logo": {{ .Permalink }},{{ end }}
   {{ with $sharing_image }}"image": {{ .Permalink }},{{ end }}
   "parentOrganization": {
     "@type": "CollegeOrUniversity",
@@ -16,17 +22,6 @@
     "alternateName": "UQAR",
     "url": "https://www.uqar.ca/"
   },
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "207A rue Notre-Dame Est",
-    "addressLocality": "Rimouski",
-    "addressRegion": "QC",
-    "postalCode": "G5L 2A4",
-    "addressCountry": "CA"
-  },
-  "sameAs": [
-    "https://github.com/rempsyc/lab"
-  ],
   "url": {{ site.BaseURL }}
 }
 </script>

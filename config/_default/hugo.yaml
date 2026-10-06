@@ -6,12 +6,15 @@
 # Website name (set in params.yaml under hugoblox.branding.name)
 title: ''
 # Website URL
-baseURL: 'https://rempsyc.github.io/lab/'
+# [À COMPLÉTER] : domaine du site. En attendant, GitHub Actions fournit
+# l'adresse au moment de la construction et l'aperçu local utilise localhost.
+baseURL: '/'
 
 ############################
 ## LANGUAGE
 ############################
 
+# Anglais à la racine (/research/), français sous /fr/ (/fr/recherche/)
 defaultContentLanguage: en
 hasCJKLanguage: false
 defaultContentLanguageInSubdir: false

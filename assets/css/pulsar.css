@@ -1,0 +1,389 @@
+/* Pulsar Lab : feuille de style du site.
+
+   Couleurs, polices et formes viennent uniquement de marque/jetons/tokens.css
+   (variables --pl-*). Aucune couleur n'est codée en dur ici.
+   Chargée en dernier, après les styles de Hugo Blox
+   (layouts/_partials/hooks/head-end/marque.html). */
+
+/* ---------- 1. Hugo Blox ramené aux jetons de marque ---------- */
+
+:root {
+  /* Polices lues par Hugo Blox (pack data/fonts/pulsar.yaml) */
+  --hb-font-heading: var(--pl-police-titre);
+  --hb-font-body: var(--pl-police-texte);
+  --hb-font-code: var(--pl-police-mono);
+  --hb-font-nav: var(--pl-police-texte);
+  --hb-font-family-sans: var(--pl-police-texte);
+
+  /* Surfaces */
+  --hb-color-background: var(--pl-craie);
+  --hb-color-foreground: var(--pl-ardoise);
+  --hb-color-header-bg: var(--pl-ardoise);
+  --hb-color-header-fg: var(--pl-craie);
+  --hb-color-footer-bg: var(--pl-ardoise-nuit);
+  --hb-color-footer-fg: var(--pl-craie);
+
+  /* Nuances « primary » (accent) : Ocre sur fond clair, Sable pour les tons pâles */
+  --color-primary-50: var(--pl-craie);
+  --color-primary-100: var(--pl-craie);
+  --color-primary-200: var(--pl-nuage);
+  --color-primary-300: var(--pl-sable);
+  --color-primary-400: var(--pl-sable);
+  --color-primary-500: var(--pl-ocre);
+  --color-primary-600: var(--pl-ocre);
+  --color-primary-700: var(--pl-ocre);
+  --color-primary-800: var(--pl-ocre);
+  --color-primary-900: var(--pl-ardoise);
+  --color-primary-950: var(--pl-ardoise-nuit);
+
+  /* Nuances de gris : tons d'ardoise. Lauze (400) reste décoratif. */
+  --color-neutral-50: var(--pl-craie);
+  --color-neutral-100: var(--pl-craie);
+  --color-neutral-200: var(--pl-nuage);
+  --color-neutral-300: var(--pl-nuage);
+  --color-neutral-400: var(--pl-lauze);
+  --color-neutral-500: var(--pl-schiste);
+  --color-neutral-600: var(--pl-schiste);
+  --color-neutral-700: var(--pl-ardoise);
+  --color-neutral-800: var(--pl-ardoise);
+  --color-neutral-900: var(--pl-ardoise);
+  --color-neutral-950: var(--pl-ardoise-nuit);
+
+  --color-gray-50: var(--color-neutral-50);
+  --color-gray-100: var(--color-neutral-100);
+  --color-gray-200: var(--color-neutral-200);
+  --color-gray-300: var(--color-neutral-300);
+  --color-gray-400: var(--color-neutral-400);
+  --color-gray-500: var(--color-neutral-500);
+  --color-gray-600: var(--color-neutral-600);
+  --color-gray-700: var(--color-neutral-700);
+  --color-gray-800: var(--color-neutral-800);
+  --color-gray-900: var(--color-neutral-900);
+  --color-gray-950: var(--color-neutral-950);
+
+  --color-slate-50: var(--color-neutral-50);
+  --color-slate-100: var(--color-neutral-100);
+  --color-slate-200: var(--color-neutral-200);
+  --color-slate-300: var(--color-neutral-300);
+  --color-slate-400: var(--color-neutral-400);
+  --color-slate-500: var(--color-neutral-500);
+  --color-slate-600: var(--color-neutral-600);
+  --color-slate-700: var(--color-neutral-700);
+  --color-slate-800: var(--color-neutral-800);
+  --color-slate-900: var(--color-neutral-900);
+  --color-slate-950: var(--color-neutral-950);
+}
+
+/* ---------- 2. Base ---------- */
+
+::selection {
+  background-color: var(--pl-sable);
+  color: var(--pl-ardoise);
+}
+
+:focus-visible {
+  outline: 2px solid var(--pl-accent);
+  outline-offset: 3px;
+}
+
+/* Cible du lien « Aller au contenu » : reçoit le focus sans contour */
+#contenu:focus {
+  outline: none;
+}
+
+.prose a:not(.pl-ancre-titre) {
+  color: var(--pl-accent);
+  text-decoration-color: currentColor;
+  text-underline-offset: 0.2em;
+}
+
+.prose a:not(.pl-ancre-titre):hover {
+  color: var(--pl-texte);
+}
+
+/* Titres cliquables (layouts/_markup/render-heading.html) */
+.prose .pl-ancre-titre,
+.pl-ancre-titre {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+.prose .pl-ancre-titre:hover,
+.prose .pl-ancre-titre:focus-visible,
+.pl-ancre-titre:hover,
+.pl-ancre-titre:focus-visible {
+  text-decoration: underline;
+  text-decoration-color: var(--pl-filet);
+  text-underline-offset: 0.2em;
+}
+
+/* Sur-titre : capitales espacées en IBM Plex Mono, couleur d'accent */
+.pl-surtitre {
+  margin: 0;
+  font-family: var(--pl-police-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: var(--pl-espacement-surtitre);
+  text-transform: uppercase;
+  color: var(--pl-accent);
+}
+
+/* ---------- 3. Lien « Aller au contenu » ---------- */
+
+.pl-evitement {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  border-radius: var(--pl-rayon);
+  background-color: var(--pl-sable);
+  color: var(--pl-ardoise);
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-150%);
+}
+
+.pl-evitement:focus {
+  transform: translateY(0.75rem);
+  outline: 2px solid var(--pl-ardoise);
+}
+
+/* ---------- 4. En-tête (fond Ardoise, rôles .pl-sombre de tokens.css) ---------- */
+
+#site-header.header {
+  background-color: var(--pl-fond);
+  color: var(--pl-texte);
+  box-shadow: none;
+}
+
+#site-header .navbar {
+  max-width: var(--pl-largeur-max);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* Logo centré verticalement avec les liens du menu */
+#site-header .pl-marque {
+  display: flex;
+  align-items: center;
+}
+
+#site-header .navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+}
+
+/* Logo horizontal craie : au moins 140 px de large (marque/MARQUE.md).
+   PULSAR est plus court qu'un nom long : 1,875 rem de haut donne 147 px. */
+#site-header .navbar-brand svg {
+  width: auto;
+  height: 1.875rem;
+  max-height: none;
+}
+
+#site-header .nav-link {
+  color: var(--pl-texte);
+  font-family: var(--pl-police-texte);
+  font-weight: 500;
+}
+
+#site-header .nav-link:hover,
+#site-header .nav-link.active {
+  color: var(--pl-accent);
+}
+
+/* Page active : soulignée en plus d'être colorée */
+#site-header .nav-link.active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.45em;
+}
+
+/* Bouton de recherche : cible d'au moins 24 x 24 px (WCAG 2.2) */
+.pl-recherche-bouton {
+  display: inline-flex;
+  align-items: center;
+  padding-block: 0.5rem;
+  color: var(--pl-texte);
+  background: none;
+  border: 0;
+}
+
+.pl-recherche-bouton:hover {
+  color: var(--pl-accent);
+}
+
+/* Bouton « Menu » (mobile) */
+.pl-menu-bouton {
+  padding: 0.5rem;
+  border: 0;
+  border-radius: var(--pl-rayon);
+  background: none;
+  color: var(--pl-texte);
+  cursor: pointer;
+}
+
+.pl-menu-bouton:hover {
+  color: var(--pl-accent);
+}
+
+.pl-menu-bouton__fermer,
+.pl-menu-ouvert .pl-menu-bouton__ouvrir {
+  display: none;
+}
+
+.pl-menu-ouvert .pl-menu-bouton__fermer {
+  display: block;
+}
+
+@media (max-width: 1023.98px) {
+  #site-header.pl-menu-ouvert #nav-menu {
+    display: block;
+  }
+
+  #site-header #nav-menu {
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--pl-bordure);
+  }
+}
+
+/* Sélecteur de langue FR | EN */
+.pl-langues {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--pl-police-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+}
+
+.pl-langues li + li {
+  margin-left: 0.25rem;
+  padding-left: 0.25rem;
+  border-left: 1px solid var(--pl-filet);
+}
+
+.pl-langues a,
+.pl-langues__actuelle {
+  display: inline-block;
+  padding: 0.35rem 0.3rem;
+}
+
+.pl-langues a {
+  color: var(--pl-texte-secondaire);
+  text-decoration: none;
+}
+
+.pl-langues a:hover {
+  color: var(--pl-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.pl-langues__actuelle {
+  color: var(--pl-accent);
+  font-weight: 500;
+}
+
+.pl-langues-boite {
+  margin-right: 0.75rem;
+  padding-left: 0.25rem;
+}
+
+/* Très petits écrans (320 px) : marges resserrées pour garder l'en-tête sur
+   une seule ligne sans réduire le logo sous 140 px */
+@media (max-width: 359.98px) {
+  .pl-recherche-bouton {
+    padding-inline: 0.5rem;
+  }
+
+  .pl-langues-boite {
+    margin-right: 0.25rem;
+  }
+
+  .pl-langues a,
+  .pl-langues__actuelle {
+    padding-inline: 0.2rem;
+  }
+
+  .pl-menu-bouton {
+    padding-inline: 0.25rem;
+  }
+}
+
+/* ---------- 5. Pied de page (fond Ardoise nuit, rôles .pl-nuit) ---------- */
+
+.pl-pied {
+  margin-top: 6rem;
+  padding: 3.5rem 1rem 2rem;
+  background-color: var(--pl-fond);
+  color: var(--pl-texte);
+  font-size: 0.9375rem;
+}
+
+.pl-pied__contenu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  max-width: var(--pl-largeur-max);
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .pl-pied__contenu {
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* Logo avec descripteur : au moins 240 px de large (marque/MARQUE.md) */
+.pl-pied__marque img {
+  display: block;
+  width: 300px;
+  min-width: 240px;
+  max-width: 100%;
+  height: auto;
+}
+
+.pl-pied__bloc p {
+  margin: 0.5rem 0 0;
+  color: var(--pl-texte-secondaire);
+}
+
+.pl-pied__credit {
+  max-width: var(--pl-largeur-max);
+  margin: 3rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--pl-bordure);
+  color: var(--pl-texte-secondaire);
+  font-size: 0.8125rem;
+}
+
+.pl-pied a {
+  color: var(--pl-accent);
+  text-underline-offset: 0.2em;
+}
+
+.pl-pied a:hover {
+  color: var(--pl-texte);
+}
+
+/* ---------- 6. Mouvement réduit ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

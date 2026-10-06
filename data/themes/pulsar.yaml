@@ -1,0 +1,48 @@
+# Thème Pulsar Lab pour Hugo Blox : palette ardoise et sable.
+#
+# Miroir de marque/jetons/tokens.css. C'est le seul fichier hors de marque/ qui
+# répète des codes hex, parce que Hugo Blox calcule ses nuances à partir d'un
+# hex. Toutes les autres couleurs du site passent par les variables --et-*
+# (assets/css/pulsar.css ramène aussi ces nuances à la palette).
+# Le site reste en mode clair (params.yaml : theme.mode).
+
+hugoblox:
+  meta:
+    format: "hugoblox-theme@1"
+    name: "Pulsar Lab"
+    vendor: "pulsar-lab"
+    version: "1.0.0"
+    license: "MIT"
+    description: "Palette ardoise et sable de Pulsar Lab"
+
+  type: "dual"
+
+  light:
+    colors:
+      primary: "#8A6B33" # Ocre : accent sur fond clair
+      secondary: "#4B5A66" # Schiste
+      neutral: "#4B5A66" # Schiste : base des gris
+    surfaces:
+      background: "#F3F5F6" # Craie
+      foreground: "#2C3842" # Ardoise
+      header:
+        background: "#2C3842" # Ardoise
+        foreground: "#F3F5F6" # Craie
+      footer:
+        background: "#1D262D" # Ardoise nuit
+        foreground: "#F3F5F6" # Craie
+
+  dark:
+    colors:
+      primary: "#C9A46A" # Sable : accent sur fond sombre
+      secondary: "#AAB6BF" # Brume
+      neutral: "#AAB6BF" # Brume
+    surfaces:
+      background: "#2C3842" # Ardoise
+      foreground: "#F3F5F6" # Craie
+      header:
+        background: "#2C3842" # Ardoise
+        foreground: "#F3F5F6" # Craie
+      footer:
+        background: "#1D262D" # Ardoise nuit
+        foreground: "#F3F5F6" # Craie

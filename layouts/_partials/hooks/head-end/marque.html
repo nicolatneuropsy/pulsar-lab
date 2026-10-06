@@ -1,0 +1,25 @@
+{{- /*
+  Pulsar Lab : identité visuelle, ajoutée à la fin du <head> de chaque page.
+  Chargée après les styles de Hugo Blox pour avoir le dernier mot.
+  - jetons/tokens.css : couleurs, polices auto-hébergées et rôles (marque/jetons)
+  - css/pulsar.css : styles du site, écrits uniquement avec les variables --pl-*
+  - js/pl-navigation.js : bouton « Menu » sur mobile et lien « Aller au contenu »
+  - favicons et manifeste publiés à la racine depuis marque/favicon
+    (l'icône SVG et l'icône d'écran d'accueil sont déclarées par Hugo Blox, à
+    partir de assets/media/icon.svg et icon.png, montés depuis marque/favicon)
+*/ -}}
+{{- $jetons := hugo.Data.marque.tokens -}}
+<link rel="preload" href="{{ "polices/ibm-plex-sans-latin-400-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "polices/sora-latin-600-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ "jetons/tokens.css" | relURL }}">
+{{- with resources.Get "css/pulsar.css" | minify | fingerprint "sha256" }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+{{- end }}
+{{- with resources.Get "js/pl-navigation.js" | js.Build (dict "minify" true) | fingerprint "sha256" }}
+<script defer src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
+{{- end }}
+<link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="32x32">
+<link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
+{{- with $jetons }}
+<meta name="theme-color" content="{{ .couleurs.ardoise.hex }}">
+{{- end }}

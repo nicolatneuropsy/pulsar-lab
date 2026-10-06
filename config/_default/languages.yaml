@@ -1,28 +1,45 @@
+# Langues du site : l'anglais à la racine (/), le français sous /fr/.
+# Le nom Pulsar ne se traduit pas : Pulsar Lab en anglais, laboratoire Pulsar
+# en français (marque/MARQUE.md).
+
 en:
   label: English
+  locale: en-US
   weight: 1
   contentDir: content/en
-  title: "SAGE : Self, Altruism, Groups, & Empathy"
+  title: "Pulsar Lab"
   params:
-    lab_name: "SAGE"
-    lab_full_name: "SAGE : Self, Altruism, Groups, & Empathy"
-    institution: "Université du Québec à Rimouski (UQAR)"
     hugoblox:
+      identity:
+        name: "Pulsar Lab"
+        tagline: "Neuropsychology, electrophysiology and time"
+        description: "Pulsar Lab: neuropsychology, electrophysiology and time. Université du Québec à Rimouski (UQAR)."
       header:
-        title: SAGE Lab
+        title: Pulsar Lab
       footer:
-        text: 'Hosted on <a href="https://github.com/rempsyc/lab">GitHub</a> and built by <a href="https://remi-theriault.com/">Rémi Thériault</a>.'
+        text: ""
+      locale:
+        date_format: "January 2, 2006"
+        time_format: "3:04 PM"
+        address_format: en-ca
+
 fr:
   label: Français
+  locale: fr-CA
   weight: 2
   contentDir: content/fr
-  title: "SAGE : Soi, Altruisme, Groupes, et Empathie"
+  title: "Laboratoire Pulsar"
   params:
-    lab_name: "SAGE"
-    lab_full_name: "SAGE : Soi, Altruisme, Groupes, et Empathie"
-    institution: "Université du Québec à Rimouski (UQAR)"
     hugoblox:
+      identity:
+        name: "Laboratoire Pulsar"
+        tagline: "Neuropsychologie, électrophysiologie et temps"
+        description: "Laboratoire Pulsar : neuropsychologie, électrophysiologie et temps. Université du Québec à Rimouski (UQAR)."
       header:
-        title: Labo SAGE
+        title: Laboratoire Pulsar
       footer:
-        text: 'Hébergé sur <a href="https://github.com/rempsyc/lab">GitHub</a> et créé par <a href="https://remi-theriault.com/fr/">Rémi Thériault</a>.'
+        text: ""
+      locale:
+        date_format: "2 January 2006"
+        time_format: "15 h 04"
+        address_format: fr-ca

@@ -1,10 +1,12 @@
+{{- /* Pulsar Lab : données structurées du site web (page d'accueil). */ -}}
+{{- $jetons := hugo.Data.marque.tokens -}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": {{ printf "%s#website" site.BaseURL }},
-  "name": "SAGE Lab",
-  "alternateName": "Labo SAGE",
+  "name": {{ $jetons.nom.en }},
+  "alternateName": {{ $jetons.nom.fr }},
   {{ if site.Params.hugoblox.search.enable }}
   "potentialAction": {
     "@type": "SearchAction",

@@ -1,0 +1,11 @@
+# Libellés propres au site de Pulsar Lab (français).
+# Les autres libellés viennent de Hugo Blox (module blox, i18n/fr.yaml).
+
+pl_aller_au_contenu: "Aller au contenu"
+pl_navigation_principale: "Navigation principale"
+pl_menu: "Menu"
+pl_langues: "Choix de la langue"
+pl_adresse: "Adresse"
+pl_liens_utiles: "Liens utiles"
+pl_a_completer: "[À COMPLÉTER]"
+pl_credit: 'Gabarit adapté de <a href="https://github.com/rempsyc/lab">rempsyc/lab</a> (Laboratoire SAGE, Rémi Thériault), licence MIT. Propulsé par <a href="https://hugoblox.com">Hugo Blox</a>.'
