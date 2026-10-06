@@ -1,9 +1,9 @@
 name: Sync Publications from ORCID
 
 on:
+  # Pulsar Lab : déclenchement manuel seulement, en attendant l'identifiant
+  # ORCID du laboratoire (le gabarit importait les publications de Rémi Thériault)
   workflow_dispatch:
-  schedule:
-    - cron: "17 10 1 * *"
 
 permissions:
   contents: write
@@ -30,8 +30,12 @@ jobs:
 
       - name: Import the public ORCID record
         env:
-          ORCID_ID: "0000-0003-4315-6788"
+          ORCID_ID: "" # [À COMPLÉTER] : identifiant ORCID à importer
         run: |
+          if [ -z "$ORCID_ID" ]; then
+            echo "::error::Identifiant ORCID [À COMPLÉTER] dans .github/workflows/sync-orcid-publications.yml"
+            exit 1
+          fi
           python -m pip install "hugobloxorcid==0.3.0"
           hugoblox-orcid-import "$ORCID_ID" \
             --output "$RUNNER_TEMP/orcid-publications" \
@@ -53,7 +57,7 @@ jobs:
           commit-message: "content: add publications discovered through ORCID"
           title: "Publications: review new ORCID records"
           body: |
-            This automated update adds publications newly discovered in Rémi Thériault's public ORCID record.
+            This automated update adds publications newly discovered in the configured public ORCID record.
 
             Please review titles, dates, authors, publication status, and links before merging. Existing publication files are never overwritten.
           labels: automated-pr, content, publications

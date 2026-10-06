@@ -1,9 +1,11 @@
 name: Deploy website to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  push:
-    branches: ['main']
+  # Pulsar Lab : déclenchement manuel seulement tant que le dépôt est privé
+  # (GitHub Pages n'est pas offert pour un dépôt privé avec un compte gratuit).
+  # Au lancement, rétablir le déclenchement à chaque envoi sur main :
+  #   push:
+  #     branches: ['main']
   # Allows you to run this workflow manually from the Actions tab on GitHub
   workflow_dispatch:
 

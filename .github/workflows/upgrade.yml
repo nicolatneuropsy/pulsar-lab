@@ -11,9 +11,8 @@ on:
         options:
         - Stable
         - Beta (Preview)
-  schedule:
-    # Run at 05:00 on Monday
-    - cron: '0 5 * * 1'
+  # Pulsar Lab : pas de lancement automatique chaque lundi. Les mises à jour
+  # de Hugo Blox se lancent à la main, depuis l'onglet Actions de GitHub.
 
 permissions:
   contents: write
