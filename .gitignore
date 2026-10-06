@@ -83,3 +83,8 @@ npm-debug.log*
 
 # Réglages locaux de Claude Code
 .claude/
+
+# Informations et photos en attente de traitement (restent sur le Mac)
+A_REMPLIR.md
+photos_a_traiter/
+/*.bib
