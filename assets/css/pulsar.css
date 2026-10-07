@@ -126,6 +126,14 @@ strong,
   --tw-prose-td-borders: var(--pl-bordure);
 }
 
+/* Urbanist a un œil plus petit qu'IBM Plex Sans : 17 px sous 1024 px (comme
+   animate.bio). Au-delà, prose-lg de Hugo Blox donne déjà 18 px. */
+@media (max-width: 1023.98px) {
+  .prose {
+    font-size: 1.0625rem;
+  }
+}
+
 .prose a:not(.pl-ancre-titre) {
   color: var(--pl-accent);
   text-decoration-color: currentColor;
@@ -153,16 +161,17 @@ strong,
   text-underline-offset: 0.2em;
 }
 
-/* Sur-titre : capitales espacées en IBM Plex Mono, couleur d'accent */
+/* Étiquette (sur-titre) : Sora 500, casse normale, en gris (Schiste sur fond
+   clair, Brume sur fond sombre). Ni capitales espacées ni couleur d'accent. */
 .pl-surtitre {
   margin: 0;
-  font-family: var(--pl-police-mono);
-  font-size: 0.75rem;
+  font-family: var(--pl-police-titre);
+  font-size: 0.875rem;
   font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: var(--pl-espacement-surtitre);
-  text-transform: uppercase;
-  color: var(--pl-accent);
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--pl-texte-secondaire);
 }
 
 /* ---------- 3. Lien « Aller au contenu » ---------- */
@@ -222,7 +231,7 @@ strong,
 
 #site-header .nav-link {
   color: var(--pl-texte);
-  font-family: var(--pl-police-texte);
+  font-family: var(--pl-police-titre);
   font-weight: 500;
 }
 
@@ -294,9 +303,9 @@ strong,
   margin: 0;
   padding: 0;
   list-style: none;
-  font-family: var(--pl-police-mono);
+  font-family: var(--pl-police-titre);
   font-size: 0.8125rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
 }
 
 .pl-langues li + li {
@@ -398,7 +407,7 @@ strong,
   padding-top: 1.5rem;
   border-top: 1px solid var(--pl-bordure);
   color: var(--pl-texte-secondaire);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
 }
 
 .pl-pied a {
@@ -457,11 +466,9 @@ strong,
 .pl-accueil__liens a {
   display: inline-block;
   padding-block: 0.25rem;
-  font-family: var(--pl-police-mono);
-  font-size: 0.8125rem;
+  font-family: var(--pl-police-titre);
+  font-size: 0.9375rem;
   font-weight: 500;
-  letter-spacing: var(--pl-espacement-surtitre);
-  text-transform: uppercase;
   color: var(--pl-accent);
   text-decoration: underline;
   text-underline-offset: 0.35em;
@@ -720,6 +727,13 @@ a.pl-carte__lien:focus-visible .pl-carte__nom {
 }
 
 /* ---------- 10. Pages de publication (en-tête de Hugo Blox) ---------- */
+
+/* Boutons Source document, Citer, DOI, PDF : Hugo Blox les met en capitales
+   espacées. Casse normale, comme les étiquettes du site. */
+.hb-attachment-link {
+  letter-spacing: normal;
+  text-transform: none;
+}
 
 /* Ligne des auteurs sous le titre. Hugo Blox place chaque nom dans une boîte
    à marges (.mx-1) et la virgule dans une autre boîte : la virgule se détache
