@@ -644,17 +644,17 @@ a.pl-carte__lien:focus-visible .pl-carte__nom {
 /* ---------- 9. Pages de publication (en-tête de Hugo Blox) ---------- */
 
 /* Ligne des auteurs sous le titre. Hugo Blox place chaque nom dans une boîte
-   à marges (.mx-1) et la virgule dans une autre boîte : la virgule se retrouve
-   détachée du nom. Il omet aussi la virgule devant un auteur qui a un portrait,
-   et ce portrait miniature reste en couleur. */
+   à marges (.mx-1) et la virgule dans une autre boîte : la virgule se détache
+   du nom et peut passer seule en début de ligne. Il l'omet aussi devant un
+   auteur qui a un portrait, et ce portrait miniature reste en couleur.
+   Ici, la virgule fait partie de la boîte de chaque nom, sauf le dernier. */
 .mt-4.mb-16 > .flex-wrap > .group.mx-1 + .mr-1 {
-  margin-left: -0.25rem;
+  display: none;
 }
 
-.mt-4.mb-16 > .flex-wrap > .group.mx-1 + .group.mx-1::before {
+.mt-4.mb-16 > .flex-wrap > .group.mx-1:has(~ .group.mx-1)::after {
   content: ",";
-  margin-left: -0.5rem;
-  margin-right: 0.125rem;
+  margin-left: -0.375rem; /* annule l'écart de la boîte flex (gap-x-1.5) */
 }
 
 .mt-4.mb-16 > .flex-wrap > .group.mx-1 > img {
