@@ -1,8 +1,9 @@
 name: Sync Publications from ORCID
 
 on:
-  # Pulsar Lab : déclenchement manuel seulement, en attendant l'identifiant
-  # ORCID du laboratoire (le gabarit importait les publications de Rémi Thériault)
+  # Pulsar Lab : déclenchement manuel seulement (onglet Actions de GitHub,
+  # bouton « Run workflow »). Le résultat arrive sous forme de demande de
+  # fusion (pull request) à relire avant de l'accepter.
   workflow_dispatch:
 
 permissions:
@@ -30,24 +31,26 @@ jobs:
 
       - name: Import the public ORCID record
         env:
-          ORCID_ID: "" # [À COMPLÉTER] : identifiant ORCID à importer
+          ORCID_ID: "0000-0003-1000-1042" # Nicola Thibault
         run: |
           if [ -z "$ORCID_ID" ]; then
             echo "::error::Identifiant ORCID [À COMPLÉTER] dans .github/workflows/sync-orcid-publications.yml"
             exit 1
           fi
           python -m pip install "hugobloxorcid==0.3.0"
+          # Import direct dans content/en/publications : l'outil reconnaît ainsi
+          # les publications déjà présentes par leur DOI ou leur identifiant
+          # ORCID, même quand leur dossier a été renommé.
           hugoblox-orcid-import "$ORCID_ID" \
-            --output "$RUNNER_TEMP/orcid-publications" \
+            --output content/en/publications \
             --projects-output "$RUNNER_TEMP/orcid-projects" \
             --no-download-pdf \
             --no-import-grants
 
       - name: Add only newly discovered publications
         run: |
-          python scripts/normalize_orcid_publications.py "$RUNNER_TEMP/orcid-publications"
-          rsync -a --ignore-existing "$RUNNER_TEMP/orcid-publications/" content/en/publications/
-          rsync -a --ignore-existing "$RUNNER_TEMP/orcid-publications/" content/fr/publications/
+          python scripts/normalize_orcid_publications.py content/en/publications
+          rsync -a --ignore-existing content/en/publications/ content/fr/publications/
 
       - name: Open a reviewable update
         uses: peter-evans/create-pull-request@v8
