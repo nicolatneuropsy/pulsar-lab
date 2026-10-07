@@ -8,7 +8,8 @@ marque/polices, les convertit en tracés, puis écrit :
 
 Construction, retrouvée dans les logos d'origine (octobre 2026) :
   - mot : Sora 500, corps 64, espacement de 0,16 em, crénage de la police,
-  - descripteur : IBM Plex Sans 400,
+  - descripteur : Urbanist 400 depuis octobre 2026 (IBM Plex Sans 400 à l'origine),
+    au corps qui donne la même hauteur d'x que l'ancien descripteur,
   - symbole : le sablier formé de deux oscillations en opposition de phase,
     repris tel quel, avec un grain de rayon égal à 0,8 fois l'épaisseur du trait,
   - marges : 2 % de la hauteur du contenu, de chaque côté.
@@ -47,7 +48,7 @@ DESCRIPTEUR_UNE_LIGNE = {
     "en": "Neuropsychology, electrophysiology and time",
     "fr": "Neuropsychologie, électrophysiologie et temps",
 }
-LIEU = "UQAR · RIMOUSKI"
+LIEU = "UQAR · Rimouski"
 
 # ---------- Symbole (identique aux fichiers d'origine) ----------
 
@@ -58,19 +59,21 @@ GRAIN_X, GRAIN_Y = 60, 77
 
 MOT_CORPS = 64
 MOT_ESPACEMENT = 0.16  # em
-DESC_CORPS_HORIZONTAL = 34.8662
-DESC_CORPS_VERTICAL = 31.3796  # 90 % du corps horizontal
+# Descripteur : 34,8662 en IBM Plex Sans (hauteur d'x 0,516 em) à l'origine. En Urbanist
+# (hauteur d'x 0,500 em), 34,8662 x 0,516 / 0,500 garde la même hauteur d'x.
+DESC_CORPS_HORIZONTAL = 35.9819
+DESC_CORPS_VERTICAL = 32.3837  # 90 % du corps horizontal
 INTERLIGNE_HORIZONTAL = 49.51  # de ligne de base à ligne de base
 INTERLIGNE_VERTICAL = 45.50
 
 # Image de partage : bloc du logo à l'échelle 1,0152, aligné à x = 99,25 et
-# centré verticalement, « UQAR · RIMOUSKI » en IBM Plex Mono 500, corps 20,5,
-# espacement 0,22 em, grand sablier en filigrane à droite.
+# centré verticalement, « UQAR · Rimouski » en Sora 500, corps 20,5, sans
+# espacement ajouté, grand sablier en filigrane à droite.
 PARTAGE_LARGEUR, PARTAGE_HAUTEUR = 1200, 630
 PARTAGE_ECHELLE = 1.0152
 PARTAGE_BORD_GAUCHE = 99.25
 PARTAGE_LARGEUR_LIGNES = 567.17  # largeur des lignes du descripteur, en unités du logo
-LIEU_CORPS, LIEU_ESPACEMENT = 20.5, 0.22
+LIEU_CORPS, LIEU_ESPACEMENT = 20.5, 0
 LIEU_X, LIEU_LIGNE_DE_BASE = 97, 568
 FILIGRANE_ECHELLE = 8
 FILIGRANE_CROISEMENT = (966.5, 315)  # point où les deux oscillations se croisent
@@ -134,6 +137,16 @@ class Police:
         self.glyphes[places[0][0]].draw(bornes)
         return bornes.bounds[0] * corps / self.upm
 
+    def capitales(self, corps):
+        """Hauteur des capitales au corps donné (table OS/2 de la police)."""
+        return self.tt["OS/2"].sCapHeight / self.upm * corps
+
+    def descente(self, corps):
+        """Profondeur de la descendante du « p » au corps donné."""
+        bornes = BoundsPen(self.glyphes)
+        self.glyphes[self.tt.getBestCmap()[ord("p")]].draw(bornes)
+        return -bornes.bounds[1] * corps / self.upm
+
     def tracer(self, texte, x0, ligne_de_base, corps, espacement=0.0):
         """Chemin SVG du texte converti en tracés, et sa boîte englobante."""
         places, _ = self.placer(texte, espacement)
@@ -148,8 +161,7 @@ class Police:
 
 
 SORA = Police("sora-latin-500-normal.woff2")
-PLEX = Police("ibm-plex-sans-latin-400-normal.woff2")
-PLEX_MONO = Police("ibm-plex-mono-latin-500-normal.woff2")
+URBANIST = Police("urbanist-latin-400-normal.woff2")
 
 
 def union(*boites):
@@ -213,8 +225,8 @@ def logo_horizontal_descripteur(couleurs, langue):
     x0 = 177.628  # origine commune du mot et du descripteur
     d_mot, b_mot = SORA.tracer(NOM, x0, 46.72, MOT_CORPS, MOT_ESPACEMENT)
     ligne1, ligne2 = DESCRIPTEUR[langue]
-    d1, b1 = PLEX.tracer(ligne1, x0, 101.84, DESC_CORPS_HORIZONTAL)
-    d2, b2 = PLEX.tracer(ligne2, x0, 101.84 + INTERLIGNE_HORIZONTAL, DESC_CORPS_HORIZONTAL)
+    d1, b1 = URBANIST.tracer(ligne1, x0, 101.84, DESC_CORPS_HORIZONTAL)
+    d2, b2 = URBANIST.tracer(ligne2, x0, 101.84 + INTERLIGNE_HORIZONTAL, DESC_CORPS_HORIZONTAL)
     titre = f"{TITRE[langue]}, {ligne1[0].lower()}{ligne1[1:]} {ligne2}"
     elements = [groupe, chemin(couleurs["mot"], d_mot), chemin(couleurs["desc"], d1), chemin(couleurs["desc"], d2)]
     return document(titre, langue, elements, union(boite_symbole, b_mot, b1, b2))
@@ -228,8 +240,8 @@ def logo_vertical_descripteur(couleurs, langue):
     elements = [groupe, chemin(couleurs["mot"], d_mot)]
     boites = [boite_symbole, b_mot]
     for texte, base in ((ligne1, 267.41), (ligne2, 267.41 + INTERLIGNE_VERTICAL)):
-        x = centre - PLEX.avance(texte, DESC_CORPS_VERTICAL) / 2
-        d, b = PLEX.tracer(texte, x, base, DESC_CORPS_VERTICAL)
+        x = centre - URBANIST.avance(texte, DESC_CORPS_VERTICAL) / 2
+        d, b = URBANIST.tracer(texte, x, base, DESC_CORPS_VERTICAL)
         elements.append(chemin(couleurs["desc"], d))
         boites.append(b)
     titre = f"{TITRE[langue]}, {ligne1[0].lower()}{ligne1[1:]} {ligne2}"
@@ -240,23 +252,23 @@ def image_de_partage():
     """Image de partage bilingue : PULSAR, descripteur anglais puis français."""
     couleurs = VARIANTES["craie"]
     ligne_en, ligne_fr = DESCRIPTEUR_UNE_LIGNE["en"], DESCRIPTEUR_UNE_LIGNE["fr"]
-    corps = PARTAGE_LARGEUR_LIGNES / max(PLEX.avance(t, 1) for t in (ligne_en, ligne_fr))
-    hauteur_capitales = 0.698 * corps
+    corps = PARTAGE_LARGEUR_LIGNES / max(URBANIST.avance(t, 1) for t in (ligne_en, ligne_fr))
+    hauteur_capitales = URBANIST.capitales(corps)
     x0 = 177.628
     base1 = 46.72 + 30.78 + hauteur_capitales  # même blanc qu'à l'origine sous le mot
     base2 = base1 + INTERLIGNE_HORIZONTAL / DESC_CORPS_HORIZONTAL * corps
     d_mot, b_mot = SORA.tracer(NOM, x0, 46.72, MOT_CORPS, MOT_ESPACEMENT)
-    d1, b1 = PLEX.tracer(ligne_en, x0, base1, corps)
-    d2, b2 = PLEX.tracer(ligne_fr, x0, base2, corps)
+    d1, b1 = URBANIST.tracer(ligne_en, x0, base1, corps)
+    d2, b2 = URBANIST.tracer(ligne_fr, x0, base2, corps)
     # Le symbole couvre le bloc de texte, du haut des capitales à la place des descendantes
-    bas = base2 + (159.34 - 151.35) / DESC_CORPS_HORIZONTAL * corps
+    bas = base2 + URBANIST.descente(corps)
     echelle = bas / 93  # hauteur du sablier avec un trait de 5 : 93 unités
     groupe, b_sym = symbole(couleurs, echelle, -(26 - 2.5) * echelle, -(16 - 2.5) * echelle, 5)
     bloc = union(b_sym, b_mot, b1, b2)
     k = PARTAGE_ECHELLE
     tx = PARTAGE_BORD_GAUCHE - bloc[0] * k
     ty = PARTAGE_HAUTEUR / 2 - (bloc[1] + bloc[3]) / 2 * k
-    d_lieu, _ = PLEX_MONO.tracer(LIEU, LIEU_X - PLEX_MONO.gauche(LIEU, LIEU_CORPS, LIEU_ESPACEMENT),
+    d_lieu, _ = SORA.tracer(LIEU, LIEU_X - SORA.gauche(LIEU, LIEU_CORPS, LIEU_ESPACEMENT),
                                  LIEU_LIGNE_DE_BASE, LIEU_CORPS, LIEU_ESPACEMENT)
     fx = FILIGRANE_CROISEMENT[0] - 60 * FILIGRANE_ECHELLE
     fy = FILIGRANE_CROISEMENT[1] - 60 * FILIGRANE_ECHELLE
