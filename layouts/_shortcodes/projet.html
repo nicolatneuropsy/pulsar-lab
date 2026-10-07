@@ -1,0 +1,14 @@
+{{- /*
+  Pulsar Lab : fiche d'un projet (page Recherche), en carte blanche sous son axe.
+  Sur-titre « Projet », titre de niveau 3, puis le texte en Markdown.
+  Usage : {{< projet titre="TIC-TAC" >}} Texte du projet {{< /projet >}}
+*/ -}}
+{{- $titre := .Get "titre" -}}
+{{- $id := anchorize $titre -}}
+<div class="pl-projet">
+  <hgroup>
+    <p class="pl-surtitre">{{ i18n "pl_projet" }}</p>
+    <h3 id="{{ $id }}"><a class="pl-ancre-titre" href="#{{ $id }}">{{ $titre }}</a></h3>
+  </hgroup>
+  {{ .InnerDeindent | .Page.RenderString (dict "display" "block") }}
+</div>

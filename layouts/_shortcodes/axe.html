@@ -1,0 +1,11 @@
+{{- /*
+  Pulsar Lab : titre d'un axe de recherche (page Recherche).
+  Sur-titre « Axe 1 » et titre de niveau 2, séparés de l'axe précédent par un filet.
+  Usage : {{< axe numero="1" titre="Perception du temps" >}}
+*/ -}}
+{{- $titre := .Get "titre" -}}
+{{- $id := anchorize $titre -}}
+<hgroup class="pl-axe">
+  <p class="pl-surtitre">{{ i18n "pl_axe" }} {{ .Get "numero" }}</p>
+  <h2 id="{{ $id }}"><a class="pl-ancre-titre" href="#{{ $id }}">{{ $titre }}</a></h2>
+</hgroup>

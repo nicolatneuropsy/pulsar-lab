@@ -10,6 +10,8 @@ pl_champs_interet: "Champs d’intérêt"
 pl_liens: "Liens"
 pl_contact: "Contact"
 pl_rattachement: "Rattachement"
+pl_axe: "Axe"
+pl_projet: "Projet"
 pl_credit: 'Gabarit adapté de <a href="https://github.com/rempsyc/lab">rempsyc/lab</a> (Laboratoire SAGE, Rémi Thériault), licence MIT. Propulsé par <a href="https://hugoblox.com">Hugo Blox</a>.'
 
 # Libellés de Hugo Blox remplacés (terminologie de l’OQLF)

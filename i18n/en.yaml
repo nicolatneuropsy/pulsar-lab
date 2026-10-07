@@ -10,4 +10,6 @@ pl_champs_interet: "Research interests"
 pl_liens: "Links"
 pl_contact: "Contact"
 pl_rattachement: "Affiliation"
+pl_axe: "Axis"
+pl_projet: "Project"
 pl_credit: 'Template adapted from <a href="https://github.com/rempsyc/lab">rempsyc/lab</a> (SAGE Lab, Rémi Thériault), MIT License. Powered by <a href="https://hugoblox.com">Hugo Blox</a>.'
