@@ -93,6 +93,39 @@
   outline: none;
 }
 
+/* Graisses : Sora et IBM Plex Sans ne sont auto-hébergées que jusqu'à 600.
+   Hugo Blox demande du 700 ou du 800 (font-bold, titres de .prose), que le
+   navigateur imiterait par un faux gras. */
+b,
+strong,
+.font-bold,
+.font-extrabold,
+.font-black,
+.prose :where(h1, h2) {
+  font-weight: 600;
+}
+
+/* Texte courant (.prose) : la variante prose-slate de Hugo Blox code ses
+   couleurs en dur (palette slate de Tailwind). On les ramène aux jetons. */
+.prose,
+.prose.prose-slate {
+  --tw-prose-body: var(--pl-texte);
+  --tw-prose-headings: var(--pl-texte);
+  --tw-prose-lead: var(--pl-texte-secondaire);
+  --tw-prose-links: var(--pl-accent);
+  --tw-prose-bold: var(--pl-texte);
+  --tw-prose-counters: var(--pl-texte-secondaire);
+  --tw-prose-bullets: var(--pl-filet);
+  --tw-prose-hr: var(--pl-bordure);
+  --tw-prose-quotes: var(--pl-texte);
+  --tw-prose-quote-borders: var(--pl-bordure);
+  --tw-prose-captions: var(--pl-texte-secondaire);
+  --tw-prose-kbd: var(--pl-texte);
+  --tw-prose-code: var(--pl-texte);
+  --tw-prose-th-borders: var(--pl-bordure);
+  --tw-prose-td-borders: var(--pl-bordure);
+}
+
 .prose a:not(.pl-ancre-titre) {
   color: var(--pl-accent);
   text-decoration-color: currentColor;
