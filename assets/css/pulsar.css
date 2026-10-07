@@ -641,7 +641,27 @@ a.pl-carte__lien:focus-visible .pl-carte__nom {
   height: 1.1em;
 }
 
-/* ---------- 9. Mouvement réduit ---------- */
+/* ---------- 9. Pages de publication (en-tête de Hugo Blox) ---------- */
+
+/* Ligne des auteurs sous le titre. Hugo Blox place chaque nom dans une boîte
+   à marges (.mx-1) et la virgule dans une autre boîte : la virgule se retrouve
+   détachée du nom. Il omet aussi la virgule devant un auteur qui a un portrait,
+   et ce portrait miniature reste en couleur. */
+.mt-4.mb-16 > .flex-wrap > .group.mx-1 + .mr-1 {
+  margin-left: -0.25rem;
+}
+
+.mt-4.mb-16 > .flex-wrap > .group.mx-1 + .group.mx-1::before {
+  content: ",";
+  margin-left: -0.5rem;
+  margin-right: 0.125rem;
+}
+
+.mt-4.mb-16 > .flex-wrap > .group.mx-1 > img {
+  filter: grayscale(1);
+}
+
+/* ---------- 10. Mouvement réduit ---------- */
 
 @media (prefers-reduced-motion: reduce) {
   *,

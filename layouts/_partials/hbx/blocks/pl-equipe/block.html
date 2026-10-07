@@ -22,7 +22,7 @@
       {{- $profil := partial "functions/get_author_profile" (dict "slug" $slug) }}
       {{- $fiche := index $donnees $slug | default dict }}
       {{- $nom := $profil.title }}
-      {{- with $fiche.postnominals }}{{ $nom = printf "%s, %s" $nom (delimit . ", ") }}{{ end }}
+      {{- with $fiche.postnominals }}{{ $nom = printf "%s, %s" $nom (delimit . ", " | replaceRE `\.\s+` ".\u00a0") }}{{ end }}
       {{- $pageProfil := false }}
       {{- with where site.RegularPages "Params.membre" $slug }}{{ $pageProfil = index . 0 }}{{ end }}
       <li class="pl-carte">

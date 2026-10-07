@@ -8,7 +8,8 @@ sections:
   - block: pl-equipe
     content:
       title: Équipe
-      text: "Le laboratoire Pulsar est dirigé par Nicola Thibault, Ph. D."
+      # \u00a0 : espace insécable, pour que « Ph. D. » ne se coupe pas en fin de ligne
+      text: "Le laboratoire Pulsar est dirigé par Nicola Thibault, Ph.\u00a0D."
       groups:
         - name: Direction
           members:

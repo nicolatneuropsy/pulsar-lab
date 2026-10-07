@@ -10,7 +10,7 @@
 {{- $profil := partial "functions/get_author_profile" (dict "slug" $slug) -}}
 {{- $fiche := index (partialCached "functions/get_authors_data" $page $page.Lang) $slug | default dict -}}
 {{- $nom := $profil.title -}}
-{{- with $fiche.postnominals }}{{ $nom = printf "%s, %s" $nom (delimit . ", ") }}{{ end -}}
+{{- with $fiche.postnominals }}{{ $nom = printf "%s, %s" $nom (delimit . ", " | replaceRE `\.\s+` ".\u00a0") }}{{ end -}}
 <article class="pl-profil">
   <div class="pl-profil__portrait">
     {{- partial "pl/portrait.html" (dict "image" $profil.avatar "largeur" 360 "alt" (printf "%s %s" (i18n "pl_portrait_de") $profil.title) "classe" "") }}
