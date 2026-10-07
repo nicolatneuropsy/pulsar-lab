@@ -24,4 +24,4 @@ Au premier lancement, le script télécharge la version de Hugo fixée dans `hug
 
 ## Crédits
 
-Gabarit adapté de [rempsyc/lab](https://github.com/rempsyc/lab) (Laboratoire SAGE, Rémi Thériault), lui-même issu de [Hugo Blox](https://hugoblox.com), sous licence MIT (`LICENSE.md`). Polices Sora, IBM Plex Sans et IBM Plex Mono sous licence SIL Open Font License (`marque/polices/`).
+Gabarit adapté de [rempsyc/lab](https://github.com/rempsyc/lab) (Laboratoire SAGE, Rémi Thériault), lui-même issu de [Hugo Blox](https://hugoblox.com), sous licence MIT (`LICENSE.md`). Polices Sora, Urbanist et IBM Plex Sans (grec) sous licence SIL Open Font License (`marque/polices/`).

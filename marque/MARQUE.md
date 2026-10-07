@@ -57,9 +57,10 @@ Les contrastes vérifiés sont notés à la fin de `jetons/tokens.css`. Le Sable
 
 ## Typographie
 
-- **Sora** (500 et 600) : titres et éléments de marque. Sur-titres en capitales, espacement d'environ 0,22 em.
-- **IBM Plex Sans** (400, 500, 600, italique 400) : texte courant. Couvre le français, l'anglais et les lettres grecques (Θ, Ψ, Δ, α).
-- **IBM Plex Mono** (400, 500) : étiquettes, données, extraits de code.
+- **Sora** (500 et 600) : titres, menu, étiquettes et éléments de marque. Le mot PULSAR du logo est en Sora 500.
+- **Urbanist** (400, 500, 600, italique 400) : texte courant, et descripteur du logo en 400.
+- **IBM Plex Sans**, sous-ensemble grec seulement : appoint pour les lettres grecques (Θ, Ψ, Δ, α), absentes de Sora et d'Urbanist.
+- Étiquettes : Sora 500, casse normale, en gris (Schiste sur fond clair, Brume sur fond sombre). Ni capitales espacées, ni police mono, ni couleur d'accent.
 - Les trois familles sont sous licence SIL Open Font License et sont fournies dans `polices/` pour l'auto-hébergement.
 
 ## Filigrane

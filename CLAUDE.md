@@ -46,14 +46,14 @@ Les paires texte et fond prévues respectent WCAG AA (détail à la fin de `toke
 
 ### Typographie
 
-- Sora 500 ou 600 : titres et éléments de marque.
-- IBM Plex Sans : texte courant (400, 500, 600 et italique 400), lettres grecques comprises.
-- IBM Plex Mono : sur-titres, étiquettes, données, code.
-- Sur-titres en capitales avec un espacement d'environ 0,22 em.
+- Sora 500 ou 600 : titres, menu, étiquettes et éléments de marque.
+- Urbanist : texte courant (400, 500, 600 et italique 400), comme sur animate.bio. IBM Plex Sans ne sert plus qu'en appoint pour les lettres grecques.
+- Étiquettes (sur-titres) en casse normale, en Sora 500, en gris : Schiste sur fond clair, Brume sur fond sombre. Ni capitales espacées, ni police mono, ni couleur d'accent : ce style faisait trop « thème Claude » (décision du 7 octobre 2026).
+- L'Ocre et le Sable servent aux liens, au menu actif et au grain du sablier.
 
 ### Direction artistique
 
-Voir `reference/inspiration.md`. En bref : la sobriété d'animate.bio, transposée en ardoise et sable. Grands aplats Ardoise, sections claires couleur Craie, beaucoup d'espace, sur-titres espacés, symbole du sablier réutilisé en filigrane géant et très pâle derrière une section par page, portraits d'équipe en noir et blanc. Dans le héros, un fond animé discret de points en vagues qui évoque l'EEG, en canvas léger plutôt qu'en vidéo, figé quand `prefers-reduced-motion` est actif.
+Voir `reference/inspiration.md`. En bref : la sobriété d'animate.bio, transposée en ardoise et sable. Grands aplats Ardoise, sections claires couleur Craie, beaucoup d'espace, étiquettes sobres en casse normale, symbole du sablier réutilisé en filigrane géant et très pâle derrière une section par page, portraits d'équipe en noir et blanc. Dans le héros, un fond animé discret de points en vagues qui évoque l'EEG, en canvas léger plutôt qu'en vidéo, figé quand `prefers-reduced-motion` est actif.
 
 ## Règles d'écriture
 
