@@ -707,13 +707,12 @@ a.pl-carte__lien:focus-visible .pl-carte__nom {
   line-height: 1.25;
 }
 
-/* Projet : carte blanche sous son axe, titre plus petit que celui de l'axe */
+/* Projet : trait vertical gris à gauche et texte en retrait, sans fond ni
+   coins arrondis. Titre plus petit que celui de l'axe. */
 .prose .pl-projet {
-  margin: 1.5rem 0;
-  padding: 1.5rem 1.75rem;
-  background-color: var(--pl-surface);
-  border: 1px solid var(--pl-bordure);
-  border-radius: var(--pl-rayon);
+  margin: 2rem 0;
+  padding: 0.25rem 0 0.25rem 1.5rem;
+  border-left: 2px solid var(--pl-bordure);
 }
 
 .prose .pl-projet h3 {
@@ -728,7 +727,7 @@ a.pl-carte__lien:focus-visible .pl-carte__nom {
 
 @media (max-width: 480px) {
   .prose .pl-projet {
-    padding: 1.25rem;
+    padding-left: 1rem;
   }
 }
 
