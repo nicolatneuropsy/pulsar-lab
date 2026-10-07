@@ -3,9 +3,11 @@ title: Publications
 summary: "Articles, preprints and book chapters by Nicola Thibault and Pulsar Lab."
 translationKey: publications
 # Pages des publications : pas de temps de lecture (le résumé seul ne fait pas un texte à lire)
+# ni de carte d'auteur de Hugo Blox (elle répétait la biographie et menait à /authors/, qui n'existe pas)
 cascade:
   params:
     reading_time: false
+    profile: false
 type: landing
 
 sections:
