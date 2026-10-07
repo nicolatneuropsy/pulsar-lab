@@ -2,7 +2,7 @@
 title: "Time, Theta, and Theory: A Critical Look at Recurring Cortical Rhythms"
 authors:
   - "Nicola Thibault"
-  - "Naranayan Srinivasan"
+  - "Narayanan Srinivasan"
 date: "2026-04-01"
 hugoblox:
   ids:

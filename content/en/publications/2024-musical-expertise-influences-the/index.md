@@ -2,7 +2,7 @@
 title: "Musical Expertise Influences the Processing of Short and Long Auditory Time Intervals: An Electroencephalography Study"
 authors:
   - "Nicola Thibault"
-  - "Stéphanie D'amours"
+  - "Stéphanie D’Amours"
   - "Philippe Albouy"
   - "Simon Grondin"
 date: "2024-10-01"
