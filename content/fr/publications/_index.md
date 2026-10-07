@@ -2,6 +2,10 @@
 title: Publications
 summary: "Articles, prépublications et chapitres de livre de Nicola Thibault et du laboratoire Pulsar."
 translationKey: publications
+# Pages des publications : pas de temps de lecture (le résumé seul ne fait pas un texte à lire)
+cascade:
+  params:
+    reading_time: false
 type: landing
 
 sections:
