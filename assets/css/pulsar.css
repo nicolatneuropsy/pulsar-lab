@@ -725,6 +725,24 @@ a.pl-carte__lien:focus-visible .pl-carte__nom {
   margin: 0.75rem 0 0;
 }
 
+/* Question principale du projet, sous-questions en liste, puis collaborations */
+.prose .pl-projet > p:first-of-type {
+  font-weight: 500;
+}
+
+.prose .pl-projet ul {
+  margin: 0.5rem 0 0;
+}
+
+.prose .pl-projet li {
+  margin: 0.35rem 0;
+}
+
+.prose .pl-projet > p:last-child:not(:first-of-type) {
+  color: var(--pl-texte-secondaire);
+  font-size: 0.9375em;
+}
+
 @media (max-width: 480px) {
   .prose .pl-projet {
     padding-left: 1rem;
