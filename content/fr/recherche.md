@@ -17,8 +17,6 @@ Comment l’attention et la mémoire de travail façonnent-elles notre perceptio
 
 Les personnes participantes reproduisent la durée d’un son tout en retenant des couleurs en mémoire de travail, avec différentes priorités entre les deux tâches et différentes charges en mémoire. L’étude compare trois modèles actuels de ce que l’attention protège lorsqu’elle protège la durée, et vérifie si la frontière de 1,2 seconde sépare aussi deux formes d’attention.
 
-L’étude se déroule à l’UQAR, et son code de cotation sera diffusé sous forme de bibliothèque ouverte en R et en Python. Un volet en EEG pourrait suivre au Centre de recherche CERVO, selon les premiers résultats.
-
 ### Perception passive et reproduction d’intervalles inférieurs et supérieurs à la seconde : une étude en SEEG
 
 Cette étude reprend l’approche de la thèse de doctorat de Nicola Thibault, qui a montré par l’EEG et un paradigme passif de détection de déviance que les intervalles inférieurs et supérieurs à 1,2 seconde reposent sur des mécanismes cérébraux distincts. À l’aide d’enregistrements intracrâniens (stéréo-EEG), elle cherche à classifier les oscillations qui sous-tendent la perception passive et la reproduction de ces intervalles.
@@ -39,20 +37,18 @@ Projet de la Chaire d’excellence en recherche du Canada sur la neuroplasticit�
 
 ### Stimulation magnétique transcrânienne et mémoire de travail visuospatiale
 
-Cette étude vérifie si une stimulation magnétique transcrânienne rythmique (rTMS) du cortex pariétal, réglée sur ses oscillations, améliore la mémoire de travail visuospatiale par rapport à une condition placebo (sham), pendant que l’EEG enregistre la réponse du cerveau. Elle emploie la tâche que le troisième axe valide pour la clinique.
+Cette étude vérifie si une stimulation magnétique transcrânienne rythmique (rTMS) du cortex pariétal, à la fréquence thêta, améliore la mémoire de travail visuospatiale par rapport à une condition placebo (sham), pendant que l’EEG enregistre la réponse du cerveau. Elle emploie la tâche que le troisième axe valide pour la clinique.
 
-Projet de la Chaire d’excellence en recherche du Canada sur la neuroplasticité (Steven Laureys, Université Laval), avec Roxane Hoyer.
+En collaboration avec Roxane Hoyer (Université Laval).
 
 ## Neuropsychologie : développement et validation de tâches en libre accès
 
 Cet axe vise à offrir aux neuropsychologues du Québec des tâches en libre accès, validées et normées auprès de la population québécoise.
 
-**Méthodes :** tâches informatisées, validation psychométrique, modèles normatifs et EEG. **Personnes participantes :** populations cliniques et non cliniques.
+**Méthodes :** tâches informatisées, validation psychométrique et normalisation. **Personnes participantes :** populations cliniques et non cliniques.
 
-### Validation clinique et normes québécoises d’une tâche informatisée de mémoire de travail visuospatiale
+### Validation d’une tâche neuropsychologique de mémoire de travail visuospatiale
 
-Les épreuves cliniques usuelles de mémoire de travail visuospatiale, comme l’empan spatial et les blocs de Corsi, confondent en un seul score la rétention d’emplacements et leur manipulation mentale. Notre tâche informatisée distingue les deux. Développée pour la recherche avec la professeure Roxane Hoyer au CERVO, elle est en adaptation pour la clinique et en validation auprès de la population générale, avant l’établissement de normes.
-
-Le projet compte trois phases : un échantillon normatif stratifié par âge, sexe et scolarité, avec suréchantillonnage au Bas-Saint-Laurent, puis une étude de la sensibilité clinique avec des cliniques partenaires, puis des marqueurs électrophysiologiques de la rétention et de la manipulation. Un guide d’interprétation et un calculateur de scores normalisés seront offerts en libre accès. Des projets futurs porteront sur la validité de critère dans des conditions comme le trouble déficitaire de l’attention chez l’adulte, le vieillissement cognitif et le traumatisme craniocérébral léger.
+Les épreuves cliniques usuelles de mémoire de travail visuospatiale, comme l’empan spatial et les blocs de Corsi, confondent en un seul score la rétention d’emplacements et leur manipulation mentale. Notre tâche informatisée distingue les deux. Développée pour la recherche avec la professeure Roxane Hoyer au CERVO, elle est en adaptation pour la clinique et en validation auprès de la population générale, avant l’établissement de normes. Des projets futurs porteront aussi sur la validation de critère pour différents troubles, comme le traumatisme craniocérébral léger.
 
 En collaboration avec Roxane Hoyer (Université Laval).
