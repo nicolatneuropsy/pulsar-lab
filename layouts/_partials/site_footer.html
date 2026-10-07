@@ -3,7 +3,8 @@
   Logo horizontal avec descripteur, version craie (pour fond sombre), dans la
   langue de la page et d'au moins 240 px de large (marque/MARQUE.md). Le texte
   alternatif reprend le nom et le descripteur de marque/jetons/tokens.json.
-  Les informations manquantes restent marquées [À COMPLÉTER].
+  Contact et rattachement : params.yaml (pulsar > courriel) et languages.yaml
+  (pulsar > rattachement, dans chaque langue).
 */ -}}
 {{- $jetons := hugo.Data.marque.tokens -}}
 {{- $langue := .Lang -}}
@@ -18,14 +19,18 @@
            alt="{{ index $jetons.nom $langue }}, {{ lower (index $jetons.descripteur $langue) }}">
       {{- end }}
     </div>
+    {{- with site.Params.pulsar.courriel }}
     <div class="pl-pied__bloc">
-      <h2 class="pl-surtitre">{{ i18n "pl_adresse" }}</h2>
-      <p>{{ i18n "pl_a_completer" }}</p>
+      <h2 class="pl-surtitre">{{ i18n "pl_contact" }}</h2>
+      <p><a href="mailto:{{ . }}">{{ . }}</a></p>
     </div>
+    {{- end }}
+    {{- with site.Params.pulsar.rattachement }}
     <div class="pl-pied__bloc">
-      <h2 class="pl-surtitre">{{ i18n "pl_liens_utiles" }}</h2>
-      <p>{{ i18n "pl_a_completer" }}</p>
+      <h2 class="pl-surtitre">{{ i18n "pl_rattachement" }}</h2>
+      <p>{{ delimit . "<br>" | safeHTML }}</p>
     </div>
+    {{- end }}
   </div>
   <p class="pl-pied__credit">{{ i18n "pl_credit" | safeHTML }}</p>
 </footer>

@@ -291,3 +291,11 @@ hugoblox:
     # Affiliate referral code for rewards program
     # Join affiliate program: https://hugoblox.com/affiliates
     affiliate_code: ""
+
+# ══════════════════════════════════════════════════════════════════════════════
+# PULSAR LAB
+# Coordonnées affichées dans le pied de page. Le rattachement, propre à chaque
+# langue, est dans languages.yaml (params > pulsar > rattachement).
+# ══════════════════════════════════════════════════════════════════════════════
+pulsar:
+  courriel: "nicola_thibault@uqar.ca"

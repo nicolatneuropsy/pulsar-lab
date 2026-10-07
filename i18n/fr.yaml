@@ -8,9 +8,8 @@ pl_langues: "Choix de la langue"
 pl_portrait_de: "Portrait de"
 pl_champs_interet: "Champs d’intérêt"
 pl_liens: "Liens"
-pl_adresse: "Adresse"
-pl_liens_utiles: "Liens utiles"
-pl_a_completer: "[À COMPLÉTER]"
+pl_contact: "Contact"
+pl_rattachement: "Rattachement"
 pl_credit: 'Gabarit adapté de <a href="https://github.com/rempsyc/lab">rempsyc/lab</a> (Laboratoire SAGE, Rémi Thériault), licence MIT. Propulsé par <a href="https://hugoblox.com">Hugo Blox</a>.'
 
 # Libellés de Hugo Blox remplacés (terminologie de l’OQLF)

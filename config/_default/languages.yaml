@@ -9,6 +9,10 @@ en:
   contentDir: content/en
   title: "Pulsar Lab"
   params:
+    pulsar:
+      rattachement:
+        - "Department of Health Sciences"
+        - "Université du Québec à Rimouski"
     hugoblox:
       identity:
         name: "Pulsar Lab"
@@ -30,6 +34,10 @@ fr:
   contentDir: content/fr
   title: "Laboratoire Pulsar"
   params:
+    pulsar:
+      rattachement:
+        - "Département des sciences de la santé"
+        - "Université du Québec à Rimouski"
     hugoblox:
       identity:
         name: "Laboratoire Pulsar"
