@@ -93,7 +93,7 @@
   outline: none;
 }
 
-/* Graisses : Sora et IBM Plex Sans ne sont auto-hébergées que jusqu'à 600.
+/* Graisses : Sora et Urbanist ne sont auto-hébergées que jusqu’à 600.
    Hugo Blox demande du 700 ou du 800 (font-bold, titres de .prose), que le
    navigateur imiterait par un faux gras. */
 b,

@@ -9,7 +9,7 @@
     partir de assets/media/icon.svg et icon.png, montés depuis marque/favicon)
 */ -}}
 {{- $jetons := hugo.Data.marque.tokens -}}
-<link rel="preload" href="{{ "polices/ibm-plex-sans-latin-400-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "polices/urbanist-latin-400-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ "polices/sora-latin-600-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{ "jetons/tokens.css" | relURL }}">
 {{- with resources.Get "css/pulsar.css" | minify | fingerprint "sha256" }}
