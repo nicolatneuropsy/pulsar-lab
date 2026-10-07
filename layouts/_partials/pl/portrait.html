@@ -1,0 +1,17 @@
+{{- /*
+  Pulsar Lab : portrait d'un membre, en noir et blanc (direction artistique).
+  Toutes les photos sont recadrées au même format (4:5, ancrées en haut), passées
+  en niveaux de gris et converties en WebP, en deux tailles pour les écrans denses.
+
+  Entrée : dict "image" (ressource d'assets/media/authors), "largeur" (px affichés),
+           "alt" (texte alternatif, vide quand le nom est écrit à côté), "classe".
+*/ -}}
+{{- $image := .image -}}
+{{- $largeur := .largeur | default 240 -}}
+{{- $hauteur := div (mul $largeur 5) 4 -}}
+{{- with $image -}}
+  {{- $x1 := .Fill (printf "%dx%d Top webp q82" $largeur $hauteur) | images.Filter images.Grayscale -}}
+  {{- $x2 := .Fill (printf "%dx%d Top webp q78" (mul $largeur 2) (mul $hauteur 2)) | images.Filter images.Grayscale -}}
+  <img class="{{ $.classe }}" src="{{ $x1.RelPermalink }}" srcset="{{ $x1.RelPermalink }} 1x, {{ $x2.RelPermalink }} 2x"
+       width="{{ $largeur }}" height="{{ $hauteur }}" alt="{{ $.alt }}" loading="lazy" decoding="async">
+{{- end -}}

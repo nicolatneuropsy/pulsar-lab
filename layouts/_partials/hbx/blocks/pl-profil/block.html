@@ -1,0 +1,58 @@
+{{- /*
+  Pulsar Lab : page de profil d'un membre (bloc « pl-profil »).
+  Tout vient de data/authors (et data/fr/authors pour le français) : rien n'est
+  écrit dans la page elle-même. Les liens affichent leur libellé, plutôt que le
+  nom de l'icône, pour les lecteurs d'écran.
+*/ -}}
+{{- $page := .wcPage -}}
+{{- $contenu := .wcBlock.content | default dict -}}
+{{- $slug := $contenu.membre -}}
+{{- $profil := partial "functions/get_author_profile" (dict "slug" $slug) -}}
+{{- $fiche := index (partialCached "functions/get_authors_data" $page $page.Lang) $slug | default dict -}}
+{{- $nom := $profil.title -}}
+{{- with $fiche.postnominals }}{{ $nom = printf "%s, %s" $nom (delimit . ", ") }}{{ end -}}
+<article class="pl-profil">
+  <div class="pl-profil__portrait">
+    {{- partial "pl/portrait.html" (dict "image" $profil.avatar "largeur" 360 "alt" (printf "%s %s" (i18n "pl_portrait_de") $profil.title) "classe" "") }}
+  </div>
+  <div class="pl-profil__texte">
+    {{- with $contenu.surtitre }}
+    <p class="pl-surtitre">{{ . }}</p>
+    {{- end }}
+    <h1>{{ $nom }}</h1>
+    {{- with $profil.role }}
+    <p class="pl-profil__role">{{ . }}</p>
+    {{- end }}
+    {{- with $profil.affiliations }}
+    <ul class="pl-profil__affiliations">
+      {{- range . }}
+      <li>{{ with .url }}<a href="{{ . }}">{{ end }}{{ .name }}{{ with .url }}</a>{{ end }}</li>
+      {{- end }}
+    </ul>
+    {{- end }}
+    {{- with $profil.bio }}
+    <div class="pl-profil__bio">{{ . | markdownify }}</div>
+    {{- end }}
+    {{- with $profil.interests }}
+    <h2 class="pl-surtitre">{{ i18n "pl_champs_interet" }}</h2>
+    <ul class="pl-etiquettes">
+      {{- range . }}
+      <li>{{ . }}</li>
+      {{- end }}
+    </ul>
+    {{- end }}
+    {{- with $profil.links }}
+    <h2 class="pl-surtitre">{{ i18n "pl_liens" }}</h2>
+    <ul class="pl-profil__liens">
+      {{- range . }}
+      <li>
+        <a href="{{ .url }}">
+          {{- partial "functions/get_icon" (dict "name" .icon "attributes" `aria-hidden="true" focusable="false" class="pl-icone"`) -}}
+          <span>{{ .label }}</span>
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+    {{- end }}
+  </div>
+</article>

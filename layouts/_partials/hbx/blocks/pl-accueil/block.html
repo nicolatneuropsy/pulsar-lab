@@ -1,0 +1,34 @@
+{{- /*
+  Pulsar Lab : accueil provisoire (bloc « pl-accueil »).
+  Logo vertical avec descripteur dans la langue de la page, mission, rattachement
+  et liens vers les pages principales. Le design complet de l'accueil le remplacera.
+  Le titre de la page (h1) est le logo lui-même : son texte alternatif donne le
+  nom et le descripteur, tirés de marque/jetons/tokens.json.
+*/ -}}
+{{- $page := .wcPage -}}
+{{- $contenu := .wcBlock.content | default dict -}}
+{{- $jetons := hugo.Data.marque.tokens -}}
+{{- $langue := $page.Lang -}}
+{{- $logo := resources.Get (printf "marque/logo/svg/pulsar_vertical-descripteur_ardoise_%s.svg" $langue) -}}
+<div class="pl-accueil">
+  <h1 class="pl-accueil__titre">
+    {{- with $logo }}
+    {{- $dimensions := index (findRESubmatch `width="([\d.]+)" height="([\d.]+)"` .Content 1) 0 }}
+    <img src="{{ .RelPermalink }}" width="{{ math.Round (float (index $dimensions 1)) }}" height="{{ math.Round (float (index $dimensions 2)) }}"
+         alt="{{ index $jetons.nom $langue }}, {{ lower (index $jetons.descripteur $langue) }}">
+    {{- end }}
+  </h1>
+  {{- with $contenu.text }}
+  <p class="pl-accueil__mission">{{ . }}</p>
+  {{- end }}
+  {{- with $contenu.affiliation }}
+  <p class="pl-accueil__rattachement">{{ . }}</p>
+  {{- end }}
+  {{- with $contenu.liens }}
+  <ul class="pl-accueil__liens">
+    {{- range . }}
+    <li><a href="{{ .url | relLangURL }}">{{ .texte }}</a></li>
+    {{- end }}
+  </ul>
+  {{- end }}
+</div>

@@ -1,19 +1,14 @@
+# Menu principal du site anglais (langue par défaut, à la racine)
 main:
   - name: Research
     url: research/
     weight: 20
-  - name: Projects
-    url: projects/
-    weight: 25
-  - name: People
-    url: people/
+  - name: Team
+    url: team/
     weight: 30
   - name: Publications
     url: publications/
     weight: 40
-  - name: Join
-    url: join/
-    weight: 60
   - name: Contact
     url: contact/
     weight: 70

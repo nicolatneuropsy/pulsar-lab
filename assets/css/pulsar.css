@@ -375,7 +375,271 @@
   color: var(--pl-texte);
 }
 
-/* ---------- 6. Mouvement réduit ---------- */
+/* ---------- 6. Accueil provisoire (bloc pl-accueil) ---------- */
+
+.pl-accueil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 44rem;
+  margin: 0 auto;
+  padding-inline: 1rem;
+  text-align: center;
+}
+
+.pl-accueil__titre {
+  margin: 0;
+}
+
+.pl-accueil__titre img {
+  display: block;
+  width: min(20rem, 80vw);
+  height: auto;
+}
+
+.pl-accueil__mission {
+  margin: 2.5rem 0 0;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--pl-texte);
+}
+
+.pl-accueil__rattachement {
+  margin: 1rem 0 0;
+  color: var(--pl-texte-secondaire);
+}
+
+.pl-accueil__liens {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 2rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pl-accueil__liens a {
+  display: inline-block;
+  padding-block: 0.25rem;
+  font-family: var(--pl-police-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: var(--pl-espacement-surtitre);
+  text-transform: uppercase;
+  color: var(--pl-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+}
+
+.pl-accueil__liens a:hover {
+  color: var(--pl-texte);
+}
+
+/* ---------- 7. Équipe (bloc pl-equipe) ---------- */
+
+.pl-equipe {
+  max-width: var(--pl-largeur-max);
+  margin: 0 auto;
+  padding-inline: 1rem;
+}
+
+.pl-equipe__entete {
+  max-width: 44rem;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+
+.pl-equipe__entete h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.pl-equipe__entete p {
+  margin: 1.25rem 0 0;
+  font-size: 1.125rem;
+  color: var(--pl-texte-secondaire);
+}
+
+.pl-equipe__groupe + .pl-equipe__groupe {
+  margin-top: 4rem;
+}
+
+.pl-equipe__groupe > .pl-surtitre {
+  margin-bottom: 2.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--pl-bordure);
+  text-align: center;
+}
+
+.pl-equipe__membres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem 2.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Portraits en noir et blanc, coins arrondis (pl/portrait.html) */
+.pl-carte {
+  width: 15rem;
+  text-align: center;
+}
+
+.pl-carte__lien {
+  display: block;
+  color: var(--pl-texte);
+  text-decoration: none;
+}
+
+.pl-carte__portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--pl-rayon-grand);
+  background-color: var(--pl-nuage);
+}
+
+.pl-carte__nom {
+  display: block;
+  margin-top: 1.25rem;
+  font-family: var(--pl-police-titre);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+a.pl-carte__lien:hover .pl-carte__nom,
+a.pl-carte__lien:focus-visible .pl-carte__nom {
+  color: var(--pl-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.pl-carte__role {
+  margin: 0.5rem 0 0;
+  color: var(--pl-texte-secondaire);
+}
+
+.pl-carte__affiliation {
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  color: var(--pl-texte-secondaire);
+}
+
+/* ---------- 8. Profil (bloc pl-profil) ---------- */
+
+.pl-profil {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 768px) {
+  .pl-profil {
+    grid-template-columns: 20rem 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+}
+
+.pl-profil__portrait img {
+  display: block;
+  width: 100%;
+  max-width: 22.5rem;
+  height: auto;
+  border-radius: var(--pl-rayon-grand);
+  background-color: var(--pl-nuage);
+}
+
+.pl-profil h1 {
+  margin: 0.5rem 0 0;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+.pl-profil__role {
+  margin: 0.75rem 0 0;
+  font-size: 1.125rem;
+  color: var(--pl-texte);
+}
+
+.pl-profil__affiliations {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--pl-texte-secondaire);
+}
+
+.pl-profil__affiliations li + li {
+  margin-top: 0.25rem;
+}
+
+.pl-profil__affiliations a,
+.pl-profil__liens a {
+  color: var(--pl-accent);
+  text-underline-offset: 0.2em;
+}
+
+.pl-profil__bio {
+  max-width: 40rem;
+  margin-top: 2rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.pl-profil__bio p {
+  margin: 0;
+}
+
+.pl-profil__texte > h2.pl-surtitre {
+  margin-top: 2.5rem;
+}
+
+.pl-etiquettes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pl-etiquettes li {
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--pl-bordure);
+  border-radius: 999px;
+  background-color: var(--pl-surface);
+  color: var(--pl-texte);
+  font-size: 0.875rem;
+}
+
+.pl-profil__liens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.75rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pl-profil__liens a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block: 0.25rem;
+}
+
+.pl-icone {
+  flex: none;
+  width: 1.1em;
+  height: 1.1em;
+}
+
+/* ---------- 9. Mouvement réduit ---------- */
 
 @media (prefers-reduced-motion: reduce) {
   *,

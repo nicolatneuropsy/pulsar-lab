@@ -1,0 +1,52 @@
+{{- /*
+  Pulsar Lab : page Équipe (bloc « pl-equipe »), repris du bloc sage-team du gabarit.
+  Membres regroupés (Direction, étudiantes et étudiants, etc.), lus dans data/authors.
+  Chaque carte mène à la page de profil du membre : la page dont le paramètre
+  « membre » porte son identifiant (ex. content/en/team/nicola-thibault.md).
+*/ -}}
+{{- $page := .wcPage -}}
+{{- $contenu := .wcBlock.content | default dict -}}
+{{- $donnees := partialCached "functions/get_authors_data" $page $page.Lang -}}
+<div class="pl-equipe">
+  <header class="pl-equipe__entete">
+    <h1>{{ $contenu.title }}</h1>
+    {{- with $contenu.text }}
+    <p>{{ . }}</p>
+    {{- end }}
+  </header>
+  {{- range $groupe := $contenu.groups }}
+  <section class="pl-equipe__groupe" aria-labelledby="groupe-{{ urlize $groupe.name }}">
+    <h2 class="pl-surtitre" id="groupe-{{ urlize $groupe.name }}">{{ $groupe.name }}</h2>
+    <ul class="pl-equipe__membres">
+      {{- range $slug := $groupe.members }}
+      {{- $profil := partial "functions/get_author_profile" (dict "slug" $slug) }}
+      {{- $fiche := index $donnees $slug | default dict }}
+      {{- $nom := $profil.title }}
+      {{- with $fiche.postnominals }}{{ $nom = printf "%s, %s" $nom (delimit . ", ") }}{{ end }}
+      {{- $pageProfil := false }}
+      {{- with where site.RegularPages "Params.membre" $slug }}{{ $pageProfil = index . 0 }}{{ end }}
+      <li class="pl-carte">
+        {{- if $pageProfil }}
+        <a class="pl-carte__lien" href="{{ $pageProfil.RelPermalink }}">
+        {{- else }}
+        <div class="pl-carte__lien">
+        {{- end }}
+          {{- partial "pl/portrait.html" (dict "image" $profil.avatar "largeur" 240 "alt" "" "classe" "pl-carte__portrait") }}
+          <span class="pl-carte__nom">{{ $nom }}</span>
+        {{- if $pageProfil }}
+        </a>
+        {{- else }}
+        </div>
+        {{- end }}
+        {{- with $profil.role }}
+        <p class="pl-carte__role">{{ . }}</p>
+        {{- end }}
+        {{- with $profil.affiliations }}
+        <p class="pl-carte__affiliation">{{ (index . 0).name }}</p>
+        {{- end }}
+      </li>
+      {{- end }}
+    </ul>
+  </section>
+  {{- end }}
+</div>
