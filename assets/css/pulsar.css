@@ -26,7 +26,9 @@
   /* Nuances « primary » (accent) : Ocre sur fond clair, Sable pour les tons pâles */
   --color-primary-50: var(--pl-craie);
   --color-primary-100: var(--pl-craie);
-  --color-primary-200: var(--pl-nuage);
+  /* 200 en Craie : Hugo Blox y pose du texte primary-800 (Ocre), et l'Ocre
+     sur Nuage n'atteint pas 4,5:1 (pastilles des pages de taxonomie) */
+  --color-primary-200: var(--pl-craie);
   --color-primary-300: var(--pl-sable);
   --color-primary-400: var(--pl-sable);
   --color-primary-500: var(--pl-ocre);
