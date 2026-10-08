@@ -26,6 +26,7 @@ Tout est dans `marque/`. Lire `marque/MARQUE.md` avant toute décision visuelle.
 - Utiliser les fichiers de `marque/logo/svg/` tels quels. Ne pas les redessiner, les recolorer ni retaper le logo en texte. Ils sont produits par `marque/outils/generer_logos.py` : toute modification des logos passe par ce script, avec mon accord.
 - Couleurs, polices et rôles : `marque/jetons/tokens.css` (variables `--pl-*`). Toujours passer par ces variables, aucune couleur codée en dur.
 - Polices auto-hébergées depuis `marque/polices/`. Pas de Google Fonts ni d'autre service externe de polices (Loi 25).
+- Logo de l'UQAR : en petit sous le logo Pulsar dans l'en-tête (« logo seul ») et sous le logo du pied de page (logo officiel), en Craie sur fond sombre. Source et règles dans `marque/MARQUE.md`.
 
 ### Palette ardoise et sable
 

@@ -18,6 +18,15 @@
       <img src="{{ .RelPermalink }}" width="300" height="{{ $hauteur }}" loading="lazy"
            alt="{{ index $jetons.nom $langue }}, {{ lower (index $jetons.descripteur $langue) }}">
       {{- end }}
+      {{- /* Logo de l'UQAR (version officielle complète, en Craie), lien vers uqar.ca */}}
+      {{- with resources.Get "media/uqar/uqar-logo-officiel-craie.png" }}
+      {{- $largeur := 180 }}
+      {{- $image := .Resize (printf "%dx png" (mul $largeur 2)) }}
+      <a class="pl-pied__uqar" href="https://www.uqar.ca/">
+        <img src="{{ $image.RelPermalink }}" width="{{ $largeur }}" height="{{ div (mul $image.Height $largeur) $image.Width }}"
+             alt="Université du Québec à Rimouski" loading="lazy">
+      </a>
+      {{- end }}
     </div>
     {{- with site.Params.pulsar.courriel }}
     <div class="pl-pied__bloc">

@@ -215,10 +215,20 @@ strong,
   padding-inline: 1rem;
 }
 
-/* Logo centré verticalement avec les liens du menu */
+/* Logo Pulsar, puis logo de l'UQAR en petit dessous : le bloc reste centré
+   verticalement avec les liens du menu, sans agrandir l'en-tête */
 #site-header .pl-marque {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+#site-header .pl-marque__uqar {
+  display: block;
+  width: auto;
+  height: 0.875rem;
 }
 
 #site-header .navbar-brand {
@@ -393,8 +403,22 @@ strong,
   }
 }
 
+/* Logo de l'UQAR (version officielle complète, en Craie) sous le logo Pulsar */
+.pl-pied__uqar {
+  display: inline-block;
+  margin-top: 2rem;
+  border-radius: 4px;
+}
+
+.pl-pied__uqar img {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+}
+
 /* Logo avec descripteur : au moins 240 px de large (marque/MARQUE.md) */
-.pl-pied__marque img {
+.pl-pied__marque > img {
   display: block;
   width: 300px;
   min-width: 240px;

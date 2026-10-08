@@ -67,6 +67,14 @@ Les contrastes vérifiés sont notés à la fin de `jetons/tokens.css`. Le Sable
 
 Le symbole peut apparaître en très grand derrière une section, dépassant du cadre, avec une opacité de 5 à 8 %. Une seule fois par page.
 
+## Logo de l'UQAR
+
+- Source : page Direction de l'UQAR (uqar.ca/luniversite/direction-et-secretariat-general/direction/), fichiers officiels RVB « logo seul » (bleu UQAR) et « officiel » (bleu foncé), téléchargés le 8 octobre 2026.
+- Les versions « renversées » publiées par l'UQAR ont un fond gris semi-opaque, qui ferait un rectangle pâle sur nos fonds sombres. `assets/media/uqar/` contient donc les tracés officiels repeints en Craie (#F3F5F6, proche du gris clair des versions renversées), avec la transparence d'origine et sans les marges vides. Le dessin n'est pas modifié.
+- En-tête : « logo seul », 14 px de haut, sous le logo Pulsar, sans lien.
+- Pied de page : logo officiel complet, 180 px de large, sous le logo Pulsar, avec un lien vers uqar.ca.
+- Ne pas redessiner, déformer ni recolorer autrement. Sur un fond clair, utiliser les fichiers officiels en bleu.
+
 ## À éviter
 
 - Déformer, incliner ou recadrer le logo.
