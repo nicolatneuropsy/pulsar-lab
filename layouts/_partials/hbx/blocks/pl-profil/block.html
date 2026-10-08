@@ -8,12 +8,14 @@
 {{- $contenu := .wcBlock.content | default dict -}}
 {{- $slug := $contenu.membre -}}
 {{- $profil := partial "functions/get_author_profile" (dict "slug" $slug) -}}
+{{- /* Portrait : assets/media/equipe/<membre>.*, sinon la photo de la fiche */ -}}
+{{- $portrait := resources.GetMatch (printf "media/equipe/%s.*" $slug) | default $profil.avatar -}}
 {{- $fiche := index (partialCached "functions/get_authors_data" $page $page.Lang) $slug | default dict -}}
 {{- $nom := $profil.title -}}
 {{- with $fiche.postnominals }}{{ $nom = printf "%s, %s" $nom (delimit . ", " | replaceRE `\.\s+` ".\u00a0") }}{{ end -}}
 <article class="pl-profil">
   <div class="pl-profil__portrait">
-    {{- partial "pl/portrait.html" (dict "image" $profil.avatar "largeur" 360 "alt" (printf "%s %s" (i18n "pl_portrait_de") $profil.title) "classe" "") }}
+    {{- partial "pl/portrait.html" (dict "image" $portrait "largeur" 360 "alt" (printf "%s %s" (i18n "pl_portrait_de") $profil.title) "classe" "") }}
   </div>
   <div class="pl-profil__texte">
     {{- with $contenu.surtitre }}

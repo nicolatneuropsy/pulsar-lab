@@ -3,6 +3,8 @@
   Membres regroupés (Direction, étudiantes et étudiants, etc.), lus dans data/authors.
   Chaque carte mène à la page de profil du membre : la page dont le paramètre
   « membre » porte son identifiant (ex. content/en/team/nicola-thibault.md).
+  Portrait : assets/media/equipe/<membre>.*, sinon la photo de la fiche
+  (assets/media/authors/<membre>.*, aussi utilisée par Hugo Blox en vignette).
 */ -}}
 {{- $page := .wcPage -}}
 {{- $contenu := .wcBlock.content | default dict -}}
@@ -20,6 +22,7 @@
     <ul class="pl-equipe__membres">
       {{- range $slug := $groupe.members }}
       {{- $profil := partial "functions/get_author_profile" (dict "slug" $slug) }}
+      {{- $portrait := resources.GetMatch (printf "media/equipe/%s.*" $slug) | default $profil.avatar }}
       {{- $fiche := index $donnees $slug | default dict }}
       {{- $nom := $profil.title }}
       {{- with $fiche.postnominals }}{{ $nom = printf "%s, %s" $nom (delimit . ", " | replaceRE `\.\s+` ".\u00a0") }}{{ end }}
@@ -31,7 +34,7 @@
         {{- else }}
         <div class="pl-carte__lien">
         {{- end }}
-          {{- partial "pl/portrait.html" (dict "image" $profil.avatar "largeur" 240 "alt" "" "classe" "pl-carte__portrait") }}
+          {{- partial "pl/portrait.html" (dict "image" $portrait "largeur" 240 "alt" "" "classe" "pl-carte__portrait") }}
           <span class="pl-carte__nom">{{ $nom }}</span>
         {{- if $pageProfil }}
         </a>
