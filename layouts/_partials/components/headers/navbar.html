@@ -38,14 +38,14 @@
         {{/* Display brand name */}}
         {{ if $show_title }}{{ $navbar_title }}{{ end }}
       </a>
-      {{- /* Pulsar Lab : logo de l'UQAR (version « logo seul », en Craie) en petit
-             sous le logo Pulsar. Une simple image, sans lien : une cible aussi
-             petite, collée au lien du logo, serait trop petite (WCAG 2.2). */}}
-      {{- with resources.Get "media/uqar/uqar-logo-seul-craie.png" }}
-      {{- $hauteur := 14 }}
-      {{- $image := .Resize (printf "x%d png" (mul $hauteur 2)) }}
+      {{- /* Pulsar Lab : logo officiel complet de l'UQAR (en Craie) sous le logo
+             Pulsar, à la même largeur (147 px). Une simple image, sans lien, pour
+             ne pas coller une seconde cible au lien du logo (WCAG 2.2). */}}
+      {{- with resources.Get "media/uqar/uqar-logo-officiel-craie.png" }}
+      {{- $largeur := 147 }}
+      {{- $image := .Resize (printf "%dx png" (mul $largeur 2)) }}
       <img class="pl-marque__uqar" src="{{ $image.RelPermalink }}"
-           width="{{ div (mul $image.Width $hauteur) $image.Height }}" height="{{ $hauteur }}"
+           width="{{ $largeur }}" height="{{ div (mul $image.Height $largeur) $image.Width }}"
            alt="Université du Québec à Rimouski">
       {{- end }}
     </div>

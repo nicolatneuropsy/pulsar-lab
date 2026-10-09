@@ -215,8 +215,8 @@ strong,
   padding-inline: 1rem;
 }
 
-/* Logo Pulsar, puis logo de l'UQAR en petit dessous : le bloc reste centré
-   verticalement avec les liens du menu, sans agrandir l'en-tête */
+/* Logo Pulsar, puis logo complet de l'UQAR dessous, à la même largeur :
+   le bloc reste centré verticalement avec les liens du menu */
 #site-header .pl-marque {
   display: flex;
   flex-direction: column;
@@ -227,8 +227,8 @@ strong,
 
 #site-header .pl-marque__uqar {
   display: block;
-  width: auto;
-  height: 0.875rem;
+  width: 147px; /* même largeur que le logo Pulsar */
+  height: auto;
 }
 
 #site-header .navbar-brand {
