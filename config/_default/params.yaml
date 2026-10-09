@@ -233,7 +233,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   repository:
     enable: false
-    url: "" # [À COMPLÉTER] : adresse du dépôt GitHub, une fois créé
+    url: "https://github.com/nicolatneuropsy/pulsar-lab" # liens « Modifier cette page » désactivés
     branch: main
     content_dir: content
 
